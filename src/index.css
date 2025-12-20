@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-primary text-text-primary font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-accent-cyan/30;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-main bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/[0.03] border border-white/[0.08];
+  }
+
+  .glass-hover {
+    @apply hover:border-accent-cyan/50 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-main text-white px-6 py-3 rounded-lg font-semibold 
+           transition-all duration-300 hover:-translate-y-1 
+           hover:shadow-[0_10px_30px_rgba(0,212,255,0.3)];
+  }
+
+  .btn-secondary {
+    @apply glass px-6 py-3 rounded-lg font-semibold 
+           transition-all duration-300 hover:bg-white/[0.05] 
+           hover:border-accent-cyan;
+  }
+
+  .section-label {
+    @apply font-mono text-sm text-accent-cyan uppercase tracking-[3px] mb-4;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
