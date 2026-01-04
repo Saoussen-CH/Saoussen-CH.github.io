@@ -1,4 +1,4 @@
-# 🚀 Saoussen Chaabnia - Portfolio Website
+# Saoussen Chaabnia - Portfolio Website
 
 A modern, responsive portfolio website built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. Features smooth animations with Framer Motion.
 
@@ -7,16 +7,16 @@ A modern, responsive portfolio website built with **React**, **TypeScript**, **V
 ![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan?logo=tailwindcss)
 
-## ✨ Features
+## Features
 
-- ⚡ **Blazing Fast** - Vite-powered development and builds
-- 🎨 **Modern Design** - Dark theme with animated gradients
-- 📱 **Fully Responsive** - Works on all devices
-- 🎭 **Smooth Animations** - Powered by Framer Motion
-- 📝 **Easy Content Updates** - Just edit TypeScript data files
-- 🚀 **Auto-Deploy** - GitHub Actions workflow included
+- **Blazing Fast** - Vite-powered development and builds
+- **Modern Design** - Dark theme with animated gradients
+- **Fully Responsive** - Works on all devices
+- **Smooth Animations** - Powered by Framer Motion
+- **Easy Content Updates** - Just edit TypeScript data files
+- **Auto-Deploy** - GitHub Actions workflow included
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -28,7 +28,7 @@ src/
 │   ├── Writing.tsx      # Articles & Publications
 │   ├── Experience.tsx
 │   └── ...
-├── data/                # 👈 EDIT THESE FILES TO UPDATE CONTENT
+├── data/                # EDIT THESE FILES TO UPDATE CONTENT
 │   ├── profile.ts       # Personal info, stats, certifications
 │   ├── articles.ts      # Blog articles
 │   ├── publications.ts  # Academic publications
@@ -39,7 +39,7 @@ src/
 └── index.css
 ```
 
-## 🛠️ Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+ 
@@ -65,7 +65,7 @@ npm run dev
 npm run build
 ```
 
-## 📝 How to Update Content
+## How to Update Content
 
 ### Add a New Article
 
@@ -74,7 +74,7 @@ Edit `src/data/articles.ts`:
 ```typescript
 {
   id: 'my-new-article',
-  emoji: '🤖',
+  emoji: '',
   category: 'Agentic AI',
   date: 'December 2024',
   title: 'My New Article Title',
@@ -110,7 +110,7 @@ Edit `src/data/projects.ts`:
 ```typescript
 {
   id: 'my-project',
-  emoji: '🚀',
+  emoji: '',
   title: 'My Project',
   description: 'Project description...',
   tags: ['React', 'TypeScript'],
@@ -130,7 +130,7 @@ Edit `src/data/profile.ts` to update:
 - Education
 - Social links
 
-## 🚀 Deployment
+## Deployment
 
 This repository includes a GitHub Actions workflow that automatically deploys to GitHub Pages on every push to `main`.
 
@@ -146,7 +146,7 @@ This repository includes a GitHub Actions workflow that automatically deploys to
 2. Configure DNS at your registrar
 3. Enable HTTPS in repository settings
 
-## 🎨 Customization
+## Customization
 
 ### Colors
 
@@ -172,11 +172,11 @@ The site uses:
 
 Change in `index.html` and `tailwind.config.js`.
 
-## 📄 License
+## License
 
 MIT License - Feel free to use this as a template for your own portfolio!
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Vite](https://vitejs.dev/)
 - [React](https://react.dev/)
@@ -186,4 +186,4 @@ MIT License - Feel free to use this as a template for your own portfolio!
 
 ---
 
-**Built with ❤️ by Saoussen Chaabnia**
+**Built by Saoussen Chaabnia**
