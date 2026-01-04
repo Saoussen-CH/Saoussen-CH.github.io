@@ -81,6 +81,7 @@ export function Experience() {
                       <h4 className="font-semibold mb-1">{cert.title}</h4>
                       <p className="text-accent-cyan text-sm">{cert.provider}</p>
                       <p className="text-text-muted text-xs mt-1">{cert.date}</p>
+                      <p><a href={cert.url} className="text-accent-violet text-sm hover:underline">View Certificate</a></p>
                     </div>
                   </div>
                 </motion.div>

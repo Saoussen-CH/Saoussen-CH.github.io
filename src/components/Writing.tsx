@@ -70,15 +70,18 @@ export function Writing() {
 
 function ArticlesTab({ isInView }: { isInView: boolean }) {
   const [showAll, setShowAll] = useState(false);
-  
+
+  // Featured series (Distributed Multi-Agent Systems)
+  const distributedMasSeries = articles.filter(a => a.id.startsWith('distributed-mas'));
   // Featured series (Google ADK)
   const adkSeries = articles.filter(a => a.id.startsWith('google-adk'));
   // Upcoming MLOps series
   const mlOpsSeries = articles.filter(a => a.id.startsWith('mlops-'));
   // Other published articles (not in series and not coming soon)
-  const otherArticles = articles.filter(a => 
-    !a.id.startsWith('google-adk') && 
+  const otherArticles = articles.filter(a =>
+    !a.id.startsWith('google-adk') &&
     !a.id.startsWith('mlops-') &&
+    !a.id.startsWith('distributed-mas') &&
     a.date !== 'Coming Soon'
   );
   
@@ -92,10 +95,48 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
+      {/* Upcoming Series Banner - Distributed Multi-Agent Systems */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        className="mb-6 p-6 glass rounded-2xl border border-accent-magenta/30 relative overflow-hidden"
+      >
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-magenta/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="relative">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2 py-1 bg-accent-magenta/20 rounded text-accent-magenta text-xs font-bold uppercase">Coming Soon</span>
+            <span className="text-accent-magenta font-semibold text-sm uppercase tracking-wide">New Series • 6 Parts</span>
+          </div>
+          <h3 className="text-2xl font-bold mb-2">Building Distributed Multi-Agent Systems with Google's AI Stack</h3>
+          <p className="text-text-secondary mb-4">
+            A comprehensive series on building production-ready distributed multi-agent architectures using Google Cloud's AI infrastructure, A2A protocol, and modern orchestration patterns.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {['Multi-Agent', 'Google Cloud', 'A2A Protocol', 'Distributed Systems', 'Orchestration'].map(tag => (
+              <span key={tag} className="px-3 py-1 bg-accent-magenta/10 rounded-full text-xs text-accent-magenta font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {distributedMasSeries.map((article, i) => (
+              <div
+                key={article.id}
+                className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
+                title={`${article.title} (Coming Soon)`}
+              >
+                {distributedMasSeries.length - i}
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
       {/* Featured Series Banner - Google ADK */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.1 }}
         className="mb-6 p-6 glass rounded-2xl border border-accent-cyan/30 relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -136,7 +177,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.2 }}
         className="mb-10 p-6 glass rounded-2xl border border-accent-violet/30 relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-violet/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />

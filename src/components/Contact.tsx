@@ -1,10 +1,10 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
-import { profile, socialLinks } from '../data';
+import { Linkedin, Github, Calendar } from 'lucide-react';
+import { socialLinks, calendlyLink } from '../data';
 
 const iconMap: Record<string, React.ReactNode> = {
-  mail: <Mail size={24} />,
+  calendar: <Calendar size={24} />,
   linkedin: <Linkedin size={24} />,
   github: <Github size={24} />,
   medium: (
@@ -35,21 +35,42 @@ export function Contact() {
           </p>
         </motion.div>
 
+        {/* Calendly Button - Prominent */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2 }}
+          className="flex justify-center mb-8"
+        >
+          <motion.a
+            href={calendlyLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn-primary flex items-center gap-3 px-8 py-4 text-lg font-semibold"
+          >
+            <Calendar size={28} />
+            <span>{calendlyLink.name}</span>
+          </motion.a>
+        </motion.div>
+
+        {/* Social Media Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.3 }}
           className="flex flex-wrap justify-center gap-4"
         >
           {socialLinks.map((link, index) => (
             <motion.a
               key={link.name}
               href={link.url}
-              target={link.url.startsWith('mailto') ? undefined : '_blank'}
+              target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + index * 0.1 }}
+              transition={{ delay: 0.4 + index * 0.1 }}
               className="flex items-center gap-3 px-6 py-4 glass rounded-xl glass-hover group"
             >
               <span className="text-text-primary group-hover:text-accent-cyan transition-colors">

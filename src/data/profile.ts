@@ -6,7 +6,7 @@ import { Certification, Education, Experience, Skill, SocialLink } from './types
 
 export const profile = {
   name: 'Saoussen Chaabnia',
-  title: 'AI Solution Architect • Agentic AI • AI Product',
+  title: 'AI Solution Engineer • Agentic AI • AI Product',
   tagline: 'Designing production-grade AI solutions that align technology, business goals, and user impact',
   email: 'saoussen.chaabnia.pro@gmail.com',
   location: 'Tunisia',
@@ -32,10 +32,10 @@ export const profile = {
 
   // Stats
   stats: [
-    { value: '3+', label: 'Years Experience' },
+    { value: '5+', label: 'Years Experience' },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Courses Completed' },
-    { value: '17+', label: 'Interns Mentored' },
+    { value: '29', label: 'Technical Medium articles' },
   ],
 };
 
@@ -49,21 +49,24 @@ export const certifications: Certification[] = [
     emoji: '🎓',
     title: 'Professional Machine Learning Engineer',
     provider: 'Google Cloud',
-    date: 'Certified 2021 • Re-certified 2024',
+    date: 'Re-certified 2024 • Certified 2021',
+    url: 'https://www.credly.com/badges/5455aac3-c76a-4795-bba5-89b3ae70c7f3/public_url',
   },
   {
     id: 'gcp-architect',
     emoji: '☁️',
     title: 'Professional Cloud Architect',
     provider: 'Google Cloud',
-    date: '2023',
+    date: 'Re-certified 2026 • Certified 2023',
+    url: 'https://www.credly.com/badges/d80051f3-19d3-456f-837c-2fd35de59e91/public_url'
   },
   {
     id: 'gcp-data',
     emoji: '📊',
     title: 'Professional Data Engineer',
     provider: 'Google Cloud',
-    date: 'Certified 2021 • Re-certified 2023',
+    date: 'Re-certified 2025 • Re-certified 2023 • Certified 2021',
+    url: 'https://www.credly.com/badges/cf4559f6-49c3-4c78-82d2-f3466a679c24/public_url'
   },
   {
     id: 'tensorflow',
@@ -71,6 +74,7 @@ export const certifications: Certification[] = [
     title: 'TensorFlow Developer Certificate',
     provider: 'TensorFlow',
     date: '2021',
+    url: 'https://www.credential.net/65ca5eb5-12ac-43c2-b481-485d1f4b75e5?_ga=2.241349570.1579956952.1651915290-1207102324.1650243670#gs.z70n1k',
   },
   {
     id: 'pm',
@@ -78,13 +82,16 @@ export const certifications: Certification[] = [
     title: 'Project Management Professional',
     provider: 'Google',
     date: '2024',
+    url: 'https://www.credly.com/badges/3f310cc0-418c-4a46-a75d-be51f9ec5c42/public_url'
+    
   },
   {
-    id: 'facebook-dl',
+    id: 'complete-list-100+-certifications',
     emoji: '🏆',
-    title: 'Facebook Deep Learning Scholar',
-    provider: 'Udacity & Facebook',
+    title: 'Complete list of 100+ Certifications',
+    provider: 'Google,IBM, Udacity, Coursera etc',
     date: '2019 • Top 3% of 10,000',
+    url: 'mailto:'
   },
 ];
 
@@ -97,7 +104,7 @@ export const experiences: Experience[] = [
     id: 'freelance',
     startDate: '2024',
     endDate: 'Present',
-    title: 'AI Solution Architect & Consultant',
+    title: 'AI Solution Engineer/Architect & Consultant',
     company: 'Independent',
     location: 'Remote',
     highlights: [
@@ -216,8 +223,13 @@ export const education: Education[] = [
 // ============================================
 
 export const socialLinks: SocialLink[] = [
-  { name: 'Email', url: 'mailto:saoussen.chaabnia.pro@gmail.com', icon: 'mail' },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/saoussen-chaabnia/', icon: 'linkedin' },
   { name: 'GitHub', url: 'https://github.com/Saoussen-CH', icon: 'github' },
   { name: 'Medium', url: 'https://medium.com/@saoussen.chaabnia', icon: 'medium' },
 ];
+
+export const calendlyLink = {
+  name: 'Schedule a Call',
+  url: 'https://calendly.com/saoussen-chaabnia-pro/',
+  icon: 'calendar'
+};
