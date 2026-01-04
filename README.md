@@ -186,4 +186,4 @@ MIT License - Feel free to use this as a template for your own portfolio!
 
 ---
 
-**Built by Saoussen Chaabnia**
+**Built with ❤️ by Saoussen Chaabnia**
