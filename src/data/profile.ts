@@ -32,7 +32,6 @@ export const profile = {
 
   // Stats
   stats: [
-    { value: '5+', label: 'Years Experience' },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Courses Completed' },
     { value: '29', label: 'Technical Medium articles' },
