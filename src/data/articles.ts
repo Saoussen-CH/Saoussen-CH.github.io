@@ -70,11 +70,11 @@ export const articles: Article[] = [
     id: 'distributed-mas-part-1',
     emoji: '🚀',
     category: 'Agentic AI',
-    date: 'Coming Soon',
+    date: 'Jan 2026',
     title: 'Building Distributed Multi-Agent Systems with Google\'s AI Stack: Part 1',
     excerpt: 'Introduction to distributed multi-agent systems and Google\'s AI stack for building production-ready agent architectures.',
     tags: ['Multi-Agent', 'Google Cloud', 'Introduction', 'Distributed Systems'],
-    url: 'https://medium.com/@saoussen.chaabnia',
+    url: 'https://medium.com/google-cloud/building-distributed-multi-agent-systems-with-googles-ai-stack-part-1-c2f872f35bcf',
   },
 
   // ========== GOOGLE ADK SERIES ==========
@@ -236,11 +236,11 @@ export const articles: Article[] = [
     id: 'mlops-architecture',
     emoji: '🏗️',
     category: 'MLOps',
-    date: 'Coming Soon',
+    date: 'Jan 2026',
     title: 'Production-Ready MLOps on GCP: Architecture Overview',
     excerpt: 'A comprehensive overview of MLOps architecture patterns for building production-grade machine learning systems on Google Cloud Platform.',
     tags: ['MLOps', 'GCP', 'Architecture', 'Vertex AI'],
-    url: 'https://medium.com/@saoussen.chaabnia',
+    url: 'https://medium.com/google-cloud/production-ready-mlops-on-gcp-part-1-architecture-overview-8b2294c41e1d',
   },
   {
     id: 'mlops-terraform',

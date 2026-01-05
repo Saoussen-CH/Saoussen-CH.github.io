@@ -95,7 +95,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Upcoming Series Banner - Distributed Multi-Agent Systems */}
+      {/* Featured Series Banner - Distributed Multi-Agent Systems */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -104,8 +104,8 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-magenta/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="relative">
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-2 py-1 bg-accent-magenta/20 rounded text-accent-magenta text-xs font-bold uppercase">Coming Soon</span>
-            <span className="text-accent-magenta font-semibold text-sm uppercase tracking-wide">New Series • 6 Parts</span>
+            <Sparkles className="text-accent-magenta" size={20} />
+            <span className="text-accent-magenta font-semibold text-sm uppercase tracking-wide">New Series • {distributedMasSeries.filter(a => a.date !== 'Coming Soon').length} of {distributedMasSeries.length} Parts Published</span>
           </div>
           <h3 className="text-2xl font-bold mb-2">Building Distributed Multi-Agent Systems with Google's AI Stack</h3>
           <p className="text-text-secondary mb-4">
@@ -119,15 +119,29 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
             ))}
           </div>
           <div className="flex flex-wrap gap-2">
-            {distributedMasSeries.map((article, i) => (
-              <div
-                key={article.id}
-                className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
-                title={`${article.title} (Coming Soon)`}
-              >
-                {distributedMasSeries.length - i}
-              </div>
-            ))}
+            {distributedMasSeries.map((article, i) => {
+              const isPublished = article.date !== 'Coming Soon';
+              return isPublished ? (
+                <a
+                  key={article.id}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-magenta hover:text-dark-primary transition-all duration-200"
+                  title={article.title}
+                >
+                  {distributedMasSeries.length - i}
+                </a>
+              ) : (
+                <div
+                  key={article.id}
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
+                  title={`${article.title} (Coming Soon)`}
+                >
+                  {distributedMasSeries.length - i}
+                </div>
+              );
+            })}
           </div>
         </div>
       </motion.div>
@@ -173,7 +187,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
         </div>
       </motion.div>
 
-      {/* Upcoming Series Banner - MLOps */}
+      {/* Upcoming/Featured Series Banner - MLOps */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -183,8 +197,14 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-violet/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="relative">
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-2 py-1 bg-accent-violet/20 rounded text-accent-violet text-xs font-bold uppercase">Coming Soon</span>
-            <span className="text-accent-violet font-semibold text-sm uppercase tracking-wide">New Series • 8 Parts</span>
+            {mlOpsSeries.filter(a => a.date !== 'Coming Soon').length > 0 ? (
+              <Sparkles className="text-accent-violet" size={20} />
+            ) : (
+              <span className="px-2 py-1 bg-accent-violet/20 rounded text-accent-violet text-xs font-bold uppercase">Coming Soon</span>
+            )}
+            <span className="text-accent-violet font-semibold text-sm uppercase tracking-wide">
+              New Series • {mlOpsSeries.filter(a => a.date !== 'Coming Soon').length > 0 ? `${mlOpsSeries.filter(a => a.date !== 'Coming Soon').length} of ${mlOpsSeries.length} Parts Published` : '8 Parts'}
+            </span>
           </div>
           <h3 className="text-2xl font-bold mb-2">Production-Ready MLOps on GCP</h3>
           <p className="text-text-secondary mb-4">
@@ -198,15 +218,29 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
             ))}
           </div>
           <div className="flex flex-wrap gap-2">
-            {mlOpsSeries.map((article, i) => (
-              <div
-                key={article.id}
-                className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
-                title={`${article.title} (Coming Soon)`}
-              >
-                {i + 1}
-              </div>
-            ))}
+            {mlOpsSeries.map((article, i) => {
+              const isPublished = article.date !== 'Coming Soon';
+              return isPublished ? (
+                <a
+                  key={article.id}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-violet hover:text-dark-primary transition-all duration-200"
+                  title={article.title}
+                >
+                  {i + 1}
+                </a>
+              ) : (
+                <div
+                  key={article.id}
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
+                  title={`${article.title} (Coming Soon)`}
+                >
+                  {i + 1}
+                </div>
+              );
+            })}
           </div>
         </div>
       </motion.div>
