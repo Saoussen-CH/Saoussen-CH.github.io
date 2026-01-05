@@ -119,7 +119,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
             ))}
           </div>
           <div className="flex flex-wrap gap-2">
-            {distributedMasSeries.map((article, i) => {
+            {distributedMasSeries.slice().reverse().map((article, i) => {
               const isPublished = article.date !== 'Coming Soon';
               return isPublished ? (
                 <a
@@ -130,7 +130,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
                   className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-magenta hover:text-dark-primary transition-all duration-200"
                   title={article.title}
                 >
-                  {distributedMasSeries.length - i}
+                  {i + 1}
                 </a>
               ) : (
                 <div
@@ -138,7 +138,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
                   className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
                   title={`${article.title} (Coming Soon)`}
                 >
-                  {distributedMasSeries.length - i}
+                  {i + 1}
                 </div>
               );
             })}
@@ -171,7 +171,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
             ))}
           </div>
           <div className="flex flex-wrap gap-2">
-            {adkSeries.slice(0, 9).map((article, i) => (
+            {adkSeries.slice(0, 9).reverse().map((article, i) => (
               <a
                 key={article.id}
                 href={article.url}
@@ -180,7 +180,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
                 className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-cyan hover:text-dark-primary transition-all duration-200"
                 title={article.title}
               >
-                {9 - i}
+                {i + 1}
               </a>
             ))}
           </div>
