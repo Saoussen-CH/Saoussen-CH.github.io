@@ -225,6 +225,7 @@ export const socialLinks: SocialLink[] = [
   { name: 'LinkedIn', url: 'https://linkedin.com/in/saoussen-chaabnia/', icon: 'linkedin' },
   { name: 'GitHub', url: 'https://github.com/Saoussen-CH', icon: 'github' },
   { name: 'Medium', url: 'https://medium.com/@saoussen.chaabnia', icon: 'medium' },
+  { name: 'Substack', url: 'https://substack.com/@saoussenchaabnia', icon: 'substack' },
 ];
 
 export const calendlyLink = {
