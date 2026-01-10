@@ -101,7 +101,7 @@ export const certifications: Certification[] = [
 export const experiences: Experience[] = [
   {
     id: 'freelance',
-    startDate: '2024',
+    startDate: '2023',
     endDate: 'Present',
     title: 'AI Solution Engineer/Architect & Consultant',
     company: 'Independent',
