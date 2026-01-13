@@ -1,0 +1,6 @@
+# robots.txt for saoussen-ch.github.io
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://saoussen-ch.github.io/sitemap.xml
