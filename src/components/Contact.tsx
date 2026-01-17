@@ -17,6 +17,11 @@ const iconMap: Record<string, React.ReactNode> = {
       <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
     </svg>
   ),
+  sessionize: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+      <path d="M12 0c6.628 0 12 5.372 12 12v10c0 1.097-.903 2-2 2h-7.5l-.001-.169c-.049-2.894-1.347-4.902-3.709-5.96L24 12l-.32-.109c-2.858-.999-5.251-2.462-7.18-4.391c-1.928-1.928-3.392-4.322-4.391-7.181L12 0L4 18c0 .667.167 1.167.5 1.5c.334.334.834.5 1.5.5l.187.001c3.771.04 5.313 1.295 5.313 3.999H2c-1.097 0-2-.903-2-2V2C0 .903.903 0 2 0h10Zm7.207 4.793c-.781-.781-1.73-1.097-2.121-.707c-.39.39-.074 1.34.707 2.121c.781.781 1.731 1.098 2.121.707c.391-.39.074-1.34-.707-2.121Z" />
+    </svg>
+  ),
 };
 
 export function Contact() {
@@ -35,7 +40,7 @@ export function Contact() {
           <h2 className="section-title mb-6">Let's Work Together</h2>
           <p className="text-text-secondary text-lg mb-10">
             Whether you're exploring AI agents, need an architecture review, want to bring an AI product to market, 
-            or need help balancing feasibility and impact — let's talk. I'm also available for speaking engagements 
+            or need help balancing feasibility and impact, let's talk. I'm also available for speaking engagements 
             and knowledge-sharing opportunities.
           </p>
         </motion.div>
@@ -65,7 +70,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4"
+          className="flex justify-center gap-4"
         >
           {socialLinks.map((link, index) => (
             <motion.a

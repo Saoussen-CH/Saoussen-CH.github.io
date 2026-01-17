@@ -65,7 +65,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Decorative Orbits */}
+      {/* Decorative Orbits with Profile Photo */}
       <div className="absolute right-12 top-1/2 -translate-y-1/2 w-96 h-96 hidden lg:block">
         {[1, 2, 3].map((i) => (
           <motion.div
@@ -91,6 +91,19 @@ export function Hero() {
             />
           </motion.div>
         ))}
+        {/* Profile Photo in Center */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: '-50%', y: '-50%' }}
+          animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="absolute w-32 h-32 top-1/2 left-1/2"
+        >
+          <img
+            src="/profile-photo.png"
+            alt={profile.name}
+            className="w-full h-full object-cover rounded-full border-4 border-accent-cyan/50 shadow-2xl"
+          />
+        </motion.div>
       </div>
     </section>
   );

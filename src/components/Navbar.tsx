@@ -34,9 +34,13 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#" className="font-mono text-xl font-bold gradient-text">
-          SC
+        {/* Logo with Profile Photo */}
+        <a href="#">
+          <img
+            src="/profile-photo.png"
+            alt="Saoussen Chaabnia"
+            className="w-10 h-10 rounded-full object-cover border-2 border-accent-cyan/50"
+          />
         </a>
 
         {/* Desktop Navigation */}
