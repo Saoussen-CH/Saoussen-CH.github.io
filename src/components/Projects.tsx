@@ -1,7 +1,16 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, Github } from 'lucide-react';
+import { ArrowRight, Github, Palette, Headphones, PenTool, Wrench, Film, Rocket } from 'lucide-react';
 import { projects } from '../data';
+
+const projectIconMap: Record<string, React.ReactNode> = {
+  'ai-creative-studio': <Palette size={24} className="text-white" />,
+  'customer-support-agent': <Headphones size={24} className="text-white" />,
+  'content-creation-mas': <PenTool size={24} className="text-white" />,
+  'mlops-gcp': <Wrench size={24} className="text-white" />,
+  'sentiment-analysis': <Film size={24} className="text-white" />,
+  'census-prediction': <Rocket size={24} className="text-white" />,
+};
 
 export function Projects() {
   const ref = useRef(null);
@@ -31,8 +40,8 @@ export function Projects() {
             >
               {/* Header */}
               <div className="p-6 bg-gradient-to-br from-dark-tertiary to-dark-secondary">
-                <div className="w-14 h-14 bg-gradient-main rounded-xl flex items-center justify-center text-2xl mb-4">
-                  {project.emoji}
+                <div className="w-14 h-14 bg-gradient-main rounded-xl flex items-center justify-center mb-4">
+                  {projectIconMap[project.id] || <Rocket size={24} className="text-white" />}
                 </div>
                 <h3 className="text-xl font-semibold">{project.title}</h3>
               </div>

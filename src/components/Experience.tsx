@@ -1,6 +1,16 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Briefcase, Award, ShieldCheck, Cloud, Brain, BarChart3, Trophy, ClipboardList } from 'lucide-react';
 import { experiences, certifications } from '../data';
+
+const certIconMap: Record<string, React.ReactNode> = {
+  'gcp-ml': <Brain size={20} className="text-accent-cyan" />,
+  'gcp-architect': <Cloud size={20} className="text-accent-cyan" />,
+  'gcp-data': <BarChart3 size={20} className="text-accent-cyan" />,
+  'tensorflow': <Brain size={20} className="text-accent-violet" />,
+  'pm': <ClipboardList size={20} className="text-accent-cyan" />,
+  'complete-list-100+-certifications': <Trophy size={20} className="text-accent-gold" />,
+};
 
 export function Experience() {
   const ref = useRef(null);
@@ -23,7 +33,7 @@ export function Experience() {
           {/* Experience Timeline */}
           <div>
             <h3 className="text-xl font-semibold mb-8 flex items-center gap-2">
-              <span className="text-2xl">💼</span> Work Experience
+              <Briefcase size={24} className="text-accent-cyan" /> Work Experience
             </h3>
             <div className="relative pl-8 border-l-2 border-white/10 space-y-10">
               {experiences.map((exp, index) => (
@@ -62,7 +72,7 @@ export function Experience() {
           {/* Certifications */}
           <div>
             <h3 className="text-xl font-semibold mb-8 flex items-center gap-2">
-              <span className="text-2xl">🎓</span> Certifications
+              <Award size={24} className="text-accent-cyan" /> Certifications
             </h3>
             <div className="grid gap-4">
               {certifications.map((cert, index) => (
@@ -74,8 +84,8 @@ export function Experience() {
                   className="glass rounded-xl p-5 glass-hover group"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 glass rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                      {cert.emoji}
+                    <div className="w-12 h-12 glass rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      {certIconMap[cert.id] || <ShieldCheck size={20} className="text-accent-cyan" />}
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">{cert.title}</h4>

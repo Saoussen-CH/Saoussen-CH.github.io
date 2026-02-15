@@ -1,6 +1,16 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Building2, Bot, Sparkles, Cloud, Brain, Code } from 'lucide-react';
 import { skills } from '../data';
+
+const skillIconMap: Record<string, React.ReactNode> = {
+  'AI Solution Architecture': <Building2 size={20} className="text-white" />,
+  'Agentic AI': <Bot size={20} className="text-white" />,
+  'Generative AI & LLMs': <Sparkles size={20} className="text-white" />,
+  'MLOps & Cloud': <Cloud size={20} className="text-white" />,
+  'Machine Learning': <Brain size={20} className="text-white" />,
+  'Data & Programming': <Code size={20} className="text-white" />,
+};
 
 export function Skills() {
   const ref = useRef(null);
@@ -29,8 +39,8 @@ export function Skills() {
               className="glass rounded-2xl p-6 glass-hover"
             >
               <h3 className="flex items-center gap-3 text-lg font-semibold mb-4">
-                <span className="w-10 h-10 bg-gradient-main rounded-xl flex items-center justify-center text-xl">
-                  {skill.emoji}
+                <span className="w-10 h-10 bg-gradient-main rounded-xl flex items-center justify-center">
+                  {skillIconMap[skill.category] || <Code size={20} className="text-white" />}
                 </span>
                 {skill.category}
               </h3>

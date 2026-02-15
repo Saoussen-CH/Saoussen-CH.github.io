@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Trophy } from 'lucide-react';
 import { education } from '../data';
 
 export function Education() {
@@ -34,8 +35,8 @@ export function Education() {
               <h4 className="font-semibold mb-1">{edu.degree}</h4>
               <p className="text-text-secondary text-sm">{edu.school}</p>
               {edu.rank && (
-                <p className="text-accent-gold text-sm mt-2 font-medium">
-                  {edu.rank}
+                <p className="text-accent-gold text-sm mt-2 font-medium flex items-center gap-1">
+                  <Trophy size={14} /> {edu.rank.replace('🏆 ', '')}
                 </p>
               )}
             </motion.div>

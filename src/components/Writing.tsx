@@ -1,6 +1,6 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { ArrowRight, FileText, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowRight, FileText, ExternalLink, Sparkles, PenLine, BookOpen, Mic, Newspaper } from 'lucide-react';
 import { articles, publications } from '../data';
 
 type Tab = 'articles' | 'publications';
@@ -41,7 +41,7 @@ export function Writing() {
                 : 'glass text-text-secondary hover:text-text-primary hover:border-accent-cyan'
             }`}
           >
-            📝 Articles ({articles.length})
+            <PenLine size={16} className="inline mr-1" /> Articles ({articles.length})
           </button>
           <button
             onClick={() => setActiveTab('publications')}
@@ -51,7 +51,7 @@ export function Writing() {
                 : 'glass text-text-secondary hover:text-text-primary hover:border-accent-cyan'
             }`}
           >
-            📚 Publications
+            <BookOpen size={16} className="inline mr-1" /> Publications
           </button>
         </motion.div>
 
@@ -247,7 +247,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
 
       {/* Other Articles */}
       <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-        <span>📚</span> More Articles
+        <Newspaper size={20} className="text-accent-green" /> More Articles
       </h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayedOthers.map((article, index) => (
@@ -261,7 +261,7 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
             {/* Image/Emoji Header */}
             <div className="h-40 bg-gradient-to-br from-dark-tertiary to-dark-secondary flex items-center justify-center text-5xl relative">
               <div className="absolute inset-0 bg-gradient-green opacity-10" />
-              {article.emoji}
+              <FileText size={32} className="text-accent-green relative z-10" />
             </div>
 
             {/* Content */}
@@ -373,7 +373,7 @@ function PublicationsTab({ isInView }: { isInView: boolean }) {
 
           {/* Venue */}
           <p className="text-text-muted text-sm mb-4 flex items-center gap-2">
-            🎤 {pub.venue} • {pub.date}
+            <Mic size={14} className="text-accent-gold" /> {pub.venue} • {pub.date}
           </p>
 
           {/* Abstract */}

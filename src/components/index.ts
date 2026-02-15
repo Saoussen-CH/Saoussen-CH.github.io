@@ -6,6 +6,7 @@ export { Skills } from './Skills';
 export { Projects } from './Projects';
 export { Writing } from './Writing';
 export { Experience } from './Experience';
+export { Talks } from './Talks';
 export { Education } from './Education';
 export { Contact } from './Contact';
 export { Footer } from './Footer';

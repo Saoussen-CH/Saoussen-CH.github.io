@@ -1,4 +1,4 @@
-import { Certification, Education, Experience, Skill, SocialLink } from './types';
+import { Certification, Education, Experience, Skill, SocialLink, Talk } from './types';
 
 // ============================================
 // 👤 PROFILE DATA
@@ -215,6 +215,67 @@ export const education: Education[] = [
     years: '2010 — 2012',
     degree: 'Bachelor in Mathematics and Physics',
     school: 'Preparatory Institute for Engineering Studies of Monastir',
+  },
+];
+
+// ============================================
+// 🎤 TALKS & WORKSHOPS
+// ============================================
+
+export const talks: Talk[] = [
+  {
+    id: 'aicd-mahdia-2026',
+    emoji: '🛠️',
+    type: 'Workshop',
+    title: 'New Agentic Frontier: Multi-Agent Systems with Google ADK & Vertex AI Design Considerations',
+    event: 'AICD - Mahdia 2026',
+    date: 'February 2026',
+    location: 'Mahdia, Tunisia',
+    description: 'Hands-on workshop teaching participants how to build, orchestrate, and deploy multi-agent AI systems using Google\'s Agent Development Kit (ADK) and Vertex AI Agent Engine. Structured around 10 progressive Jupyter notebooks concluding with a full-stack capstone project deployed to Google Cloud.',
+    highlights: [
+      'Build and orchestrate multi-agent AI systems with Google ADK',
+      'Create custom tools and coordinate agent teams powered by Gemini models',
+      'Choose between LLM-driven and workflow-driven design patterns (Sequential, Parallel, Iterative)',
+      'Navigate agent architecture trade-offs: Sub-agents vs. Agent as a Tool',
+      'Implement callbacks, observability, and guardrails for production readiness',
+      'Master session management, state, artifacts, and short-term vs. long-term memory',
+      'Deploy production-ready full-stack AI systems on Google Cloud (Agent Engine + Cloud Run)',
+    ],
+  },
+  {
+    id: 'devfest-ahlen-2025',
+    emoji: '🎤',
+    type: 'Talk',
+    title: 'Designing & Deploying Distributed Multi-Agent Systems with Google\'s AI Stack',
+    event: 'DevFest Ahlen 2025',
+    date: 'December 2025',
+    location: 'Ahlen, Germany',
+    description: 'A technical talk and live demonstration on designing and deploying distributed multi-agent systems using Google\'s AI stack. Demonstrated a live system where one orchestrator on Vertex AI Agent Engine coordinates 5 specialist agents on Cloud Run to generate complete and complex social media campaigns from a single prompt, showing how agents collaborate, delegate tasks, and scale beyond monolithic LLM applications.',
+    highlights: [
+      'Practical introduction to Google ADK for agent development with Gemini 2.5 Flash',
+      'Agent-to-Agent (A2A) Protocol for distributed agent communication',
+      'Model Context Protocol (MCP) for integrating external tools like Notion',
+      'Deployment strategies for Vertex AI Agent Engine and Cloud Run',
+      'Attendees learned to build scalable, distributed AI systems with working code examples',
+      'Understanding of A2A Protocol and MCP and how they work together for sophisticated agentic systems',
+      'Practical guidance on architecture patterns, tooling, and production considerations on Google Cloud',
+    ],
+  },
+  {
+    id: 'devfest-fusion-2025',
+    emoji: '🛠️',
+    type: 'Workshop',
+    title: 'Building Production-Ready Multi-Agent AI Systems with Google ADK',
+    event: 'DevFest Fusion 4.0 2025',
+    date: 'December 2025',
+    location: 'Tunis, Tunisia',
+    description: 'A hands-on workshop teaching attendees how to build production-ready multi-agent AI systems using Google\'s Agent Development Kit (ADK) and Vertex AI Agent Engine. Participants learned to create and orchestrate AI agents powered by Gemini models, build custom tools, and implement sequential, iterative, and parallel workflows.',
+    highlights: [
+      '8 progressive Jupyter notebooks culminating in a capstone project',
+      'Full-stack Content Creation Studio automating blog posts, social media content, email newsletters, and SEO metadata',
+      'Deployed systems to Google Cloud using Agent Engine and Cloud Run with React/FastAPI stack',
+      'Participants left with practical skills to design, build, and deploy multi-agent systems for real-world automation use cases',
+    ],
   },
 ];
 
