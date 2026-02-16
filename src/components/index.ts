@@ -10,3 +10,4 @@ export { Talks } from './Talks';
 export { Education } from './Education';
 export { Contact } from './Contact';
 export { Footer } from './Footer';
+export { BackToTop } from './BackToTop';

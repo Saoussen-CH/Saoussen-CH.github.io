@@ -11,6 +11,7 @@ import {
   Education,
   Contact,
   Footer,
+  BackToTop,
 } from './components';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

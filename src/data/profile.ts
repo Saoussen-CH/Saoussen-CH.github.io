@@ -231,6 +231,7 @@ export const talks: Talk[] = [
     event: 'AICD - Mahdia 2026',
     date: 'February 2026',
     location: 'Mahdia, Tunisia',
+    sessionizeUrl: 'https://sessionize.com/s/saoussen-chaabnia/building-and-deploying-multi-agent-systems-with-ad/160854',
     description: 'Hands-on workshop teaching participants how to build, orchestrate, and deploy multi-agent AI systems using Google\'s Agent Development Kit (ADK) and Vertex AI Agent Engine. Structured around 10 progressive Jupyter notebooks concluding with a full-stack capstone project deployed to Google Cloud.',
     highlights: [
       'Build and orchestrate multi-agent AI systems with Google ADK',
@@ -250,6 +251,7 @@ export const talks: Talk[] = [
     event: 'DevFest Ahlen 2025',
     date: 'December 2025',
     location: 'Ahlen, Germany',
+    eventUrl: 'https://gdg.community.dev/events/details/google-gdg-ahlen-presents-devfest-ahlen-2025-location-nrw-ahlen-schuhfabrik-ev-7-konigstrasse/',
     description: 'A technical talk and live demonstration on designing and deploying distributed multi-agent systems using Google\'s AI stack. Demonstrated a live system where one orchestrator on Vertex AI Agent Engine coordinates 5 specialist agents on Cloud Run to generate complete and complex social media campaigns from a single prompt, showing how agents collaborate, delegate tasks, and scale beyond monolithic LLM applications.',
     highlights: [
       'Practical introduction to Google ADK for agent development with Gemini 2.5 Flash',
@@ -269,6 +271,7 @@ export const talks: Talk[] = [
     event: 'DevFest Fusion 4.0 2025',
     date: 'December 2025',
     location: 'Tunis, Tunisia',
+    eventUrl: 'https://gdg.community.dev/events/details/google-gdg-monastir-presents-devfest-fusion-40-2025/',
     description: 'A hands-on workshop teaching attendees how to build production-ready multi-agent AI systems using Google\'s Agent Development Kit (ADK) and Vertex AI Agent Engine. Participants learned to create and orchestrate AI agents powered by Gemini models, build custom tools, and implement sequential, iterative, and parallel workflows.',
     highlights: [
       '8 progressive Jupyter notebooks culminating in a capstone project',

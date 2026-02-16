@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Calendar, Mic, PresentationIcon } from 'lucide-react';
+import { MapPin, Calendar, Mic, PresentationIcon, ExternalLink } from 'lucide-react';
 import { talks } from '../data';
 
 export function Talks() {
@@ -85,6 +85,34 @@ export function Talks() {
                   </li>
                 ))}
               </ul>
+
+              {/* Links */}
+              {(talk.sessionizeUrl || talk.eventUrl) && (
+                <div className="flex flex-wrap gap-3 mt-4">
+                  {talk.sessionizeUrl && (
+                    <a
+                      href={talk.sessionizeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-accent-cyan text-sm font-medium hover:underline"
+                    >
+                      <ExternalLink size={14} />
+                      Sessionize
+                    </a>
+                  )}
+                  {talk.eventUrl && (
+                    <a
+                      href={talk.eventUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-accent-violet text-sm font-medium hover:underline"
+                    >
+                      <ExternalLink size={14} />
+                      Event Page
+                    </a>
+                  )}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

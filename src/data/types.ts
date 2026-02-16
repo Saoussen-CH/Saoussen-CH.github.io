@@ -82,6 +82,7 @@ export interface Talk {
   description: string;
   highlights: string[];
   sessionizeUrl?: string;
+  eventUrl?: string;
 }
 
 export interface SocialLink {
