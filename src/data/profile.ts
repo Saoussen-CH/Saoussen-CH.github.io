@@ -49,7 +49,7 @@ export const certifications: Certification[] = [
     emoji: '🎓',
     title: 'Professional Machine Learning Engineer',
     provider: 'Google Cloud',
-    date: 'Re-certified 2024 • Certified 2021',
+    date: 'Re-certified 2026 • Re-certified 2024 • Certified 2021',
     url: 'https://www.credly.com/badges/5455aac3-c76a-4795-bba5-89b3ae70c7f3/public_url',
   },
   {
