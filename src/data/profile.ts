@@ -35,7 +35,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Courses Completed' },
     { value: '29', label: 'Technical Articles' },
-    { value: '3', label: 'Technical Talks & Workshops' },
+    { value: '4', label: 'Technical Talks & Workshops' },
   ],
 };
 
@@ -223,6 +223,29 @@ export const education: Education[] = [
 // ============================================
 
 export const talks: Talk[] = [
+  {
+    id: 'ramatech-2026',
+    emoji: '🛠️',
+    type: 'Workshop',
+    title: 'Building Full-Stack Multi-Agent Systems with Google ADK & Vertex AI',
+    event: 'RAMATECH 4.0 2026',
+    date: 'March 2026',
+    location: 'Tunis, Tunisia',
+    eventUrl: 'https://www.linkedin.com/posts/gdg-beja_ramatech-gdgbeja-devnass-activity-7435957433782587392-qh_B?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyn6mwBjRC3IaJeItlnRqhYpqi5EhPCmbU',
+    description: 'Hands-on workshop on building full-stack Multi-Agent Systems using Google ADK & Vertex AI. Participants progressed through 10 practical steps — from creating their first AI agent to deploying a complete React + FastAPI stack on Cloud Run.',
+    highlights: [
+      'First Agent: Creating your first AI agent with Google ADK',
+      'Custom Tools: Building specialized tools to extend agent capabilities',
+      'Agent Teams: Coordinating multiple agents working together',
+      'Choosing the Right Architecture: Patterns and trade-offs balancing Cost, Latency, and Safety',
+      'Sequential Workflows: Building deterministic pipelines for fixed steps',
+      'Iterative Workflows: Creating quality improvement loops with LoopAgent',
+      'Parallel Workflows: Using ParallelAgent for independent sub-tasks',
+      'Capstone Project: Building the complete Content Creation Studio',
+      'Deployment: Moving agents to Vertex AI Agent Engine',
+      'Full-Stack Cloud Run: Deploying the complete React + FastAPI stack to Cloud Run',
+    ],
+  },
   {
     id: 'aicd-mahdia-2026',
     emoji: '🛠️',
