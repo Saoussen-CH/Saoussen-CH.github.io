@@ -6,15 +6,15 @@ import { Certification, Education, Experience, Skill, SocialLink, Talk } from '.
 
 export const profile = {
   name: 'Saoussen Chaabnia',
-  title: 'AI Solution Engineer • Agentic AI • AI Product',
+  title: 'AI Solutions Engineer • Agentic AI • AI Product • Google Developer Expert',
   tagline: 'Designing production-grade AI solutions that align technology, business goals, and user impact',
   email: 'saoussen.chaabnia.pro@gmail.com',
   location: 'Tunisia',
   availability: 'Open for Consulting',
   
   // Hero section
-  heroDescription: `I design and deliver production-grade AI solutions that align technology, business goals, 
-    and user impact. Specializing in Agentic AI, AI Solution Architecture, and AI Product Management. 
+  heroDescription: `I design and deliver production-grade AI solutions that align technology, business goals,
+    and user impact. Google Developer Expert (GDE) in Cloud AI. Specializing in Agentic AI, AI Solution Architecture, and AI Product Management.
     3x Google Cloud Certified. Helping teams make the right technical and product decisions.`,
   
   // About section - Updated to match LinkedIn
@@ -32,6 +32,7 @@ export const profile = {
 
   // Stats
   stats: [
+    { value: 'GDE', label: 'Google Developer Expert • Cloud AI', featured: true },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Courses Completed' },
     { value: '29', label: 'Technical Articles' },

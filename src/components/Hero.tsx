@@ -1,20 +1,26 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { profile } from '../data';
 
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center px-6 md:px-12 lg:px-24 relative">
       <div className="max-w-4xl">
-        {/* Availability Badge */}
+        {/* Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6"
+          className="flex flex-wrap gap-3 mb-6"
         >
-          <span className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse" />
-          <span className="text-accent-cyan text-sm">{profile.availability}</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+            <span className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse" />
+            <span className="text-accent-cyan text-sm">{profile.availability}</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+            <Star size={14} className="text-accent-gold fill-accent-gold" />
+            <span className="text-accent-gold text-sm">Google Developer Expert • Cloud AI</span>
+          </div>
         </motion.div>
 
         {/* Main Heading */}

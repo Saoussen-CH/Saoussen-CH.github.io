@@ -41,7 +41,7 @@ export function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className="glass rounded-2xl p-6 text-center glass-hover"
+                className={`glass rounded-2xl p-6 text-center glass-hover${'featured' in stat && stat.featured ? ' col-span-2' : ''}`}
               >
                 <div className="text-4xl font-bold gradient-text mb-2">
                   {stat.value}
