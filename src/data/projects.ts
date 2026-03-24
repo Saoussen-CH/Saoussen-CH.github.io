@@ -6,6 +6,14 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    id: 'adk-multiagent-production-template',
+    emoji: '🤝',
+    title: 'Multi-Agent Customer Support System',
+    description: 'Production-ready full-stack AI support platform with hierarchical multi-agent orchestration, RAG-powered semantic search, Memory Bank for cross-session persistence, and validated refund workflows. Features Terraform IaC across dev/staging/prod, CI/CD with Cloud Build, Model Armor, 5-stage eval pipeline, and canary deployments.',
+    tags: ['Google ADK', 'Vertex AI', 'React', 'FastAPI', 'RAG', 'Firestore', 'Terraform', 'Model Armor'],
+    githubUrl: 'https://github.com/Saoussen-CH/adk-multiagent-production-template',
+  },
+  {
     id: 'ai-creative-studio',
     emoji: '🎨',
     title: 'AI Creative Studio',
@@ -13,14 +21,14 @@ export const projects: Project[] = [
     tags: ['A2A Protocol', 'MCP', 'Vertex AI', 'Cloud Run', 'Gemini 2.5'],
     githubUrl: 'https://github.com/Saoussen-CH/ai-creative-studio-adk-a2a-mcp-vertexai-cloudrun',
   },
-  {
-    id: 'customer-support-agent',
-    emoji: '🤝',
-    title: 'Multi-Agent Customer Support System',
-    description: 'Production-ready full-stack AI support platform with hierarchical multi-agent orchestration, RAG-powered semantic search, Memory Bank for cross-session persistence, and validated refund workflows.',
-    tags: ['Google ADK', 'Vertex AI', 'React', 'FastAPI', 'RAG', 'Firestore'],
-    githubUrl: 'https://github.com/Saoussen-CH/customer-support-mas-ai',
-  },
+  // {
+  //   id: 'customer-support-agent',
+  //   emoji: '🤝',
+  //   title: 'Multi-Agent Customer Support System',
+  //   description: 'Production-ready full-stack AI support platform with hierarchical multi-agent orchestration, RAG-powered semantic search, Memory Bank for cross-session persistence, and validated refund workflows.',
+  //   tags: ['Google ADK', 'Vertex AI', 'React', 'FastAPI', 'RAG', 'Firestore'],
+  //   githubUrl: 'https://github.com/Saoussen-CH/customer-support-mas-ai',
+  // },
   {
     id: 'content-creation-mas',
     emoji: '✍️',

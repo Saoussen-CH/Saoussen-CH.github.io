@@ -71,6 +71,10 @@ export function Writing() {
 function ArticlesTab({ isInView }: { isInView: boolean }) {
   const [showAll, setShowAll] = useState(false);
 
+  // New series: AgentOps Mindset
+  const agentOpsSeries = articles.filter(a => a.id.startsWith('agentops-'));
+  // New series: Multi-Agent AI Evals
+  const evalsSeries = articles.filter(a => a.id.startsWith('evals-'));
   // Featured series (Distributed Multi-Agent Systems)
   const distributedMasSeries = articles.filter(a => a.id.startsWith('distributed-mas'));
   // Featured series (Google ADK)
@@ -79,6 +83,8 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
   const mlOpsSeries = articles.filter(a => a.id.startsWith('mlops-'));
   // Other published articles (not in series and not coming soon)
   const otherArticles = articles.filter(a =>
+    !a.id.startsWith('agentops-') &&
+    !a.id.startsWith('evals-') &&
     !a.id.startsWith('google-adk') &&
     !a.id.startsWith('mlops-') &&
     !a.id.startsWith('distributed-mas') &&
@@ -95,6 +101,108 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
+      {/* New Series Banner - AgentOps Mindset */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        className="mb-6 p-6 glass rounded-2xl border border-accent-cyan/30 relative overflow-hidden"
+      >
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="relative">
+          <div className="flex items-center gap-2 mb-3">
+            <Sparkles className="text-accent-cyan" size={20} />
+            <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide">New Series • {agentOpsSeries.filter(a => a.url !== '#').length} of {agentOpsSeries.length} Parts Published</span>
+          </div>
+          <h3 className="text-2xl font-bold mb-2">Building Production-Ready Multi-Agent Systems on GCP</h3>
+          <p className="text-text-secondary mb-4">
+            A 6-part series covering multi-agent design, fullstack AI app, CI/CD, Terraform IaC, resilience patterns, Model Armor, eval-gated canary deployments, and nightly regression on GCP.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {['AgentOps', 'Google ADK', 'Vertex AI', 'Terraform', 'CI/CD', 'Production'].map(tag => (
+              <span key={tag} className="px-3 py-1 bg-accent-cyan/10 rounded-full text-xs text-accent-cyan font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {agentOpsSeries.map((article, i) => {
+              const isPublished = article.url !== '#';
+              return isPublished ? (
+                <a
+                  key={article.id}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-cyan hover:text-dark-primary transition-all duration-200"
+                  title={article.title}
+                >
+                  {i + 1}
+                </a>
+              ) : (
+                <div
+                  key={article.id}
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
+                  title={`${article.title} (Coming Soon)`}
+                >
+                  {i + 1}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* New Series Banner - Multi-Agent AI Evals */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        className="mb-6 p-6 glass rounded-2xl border border-accent-green/30 relative overflow-hidden"
+      >
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-green/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="relative">
+          <div className="flex items-center gap-2 mb-3">
+            <Sparkles className="text-accent-green" size={20} />
+            <span className="text-accent-green font-semibold text-sm uppercase tracking-wide">New Series • {evalsSeries.filter(a => a.url !== '#').length} of {evalsSeries.length} Parts Published</span>
+          </div>
+          <h3 className="text-2xl font-bold mb-2">Multi-Agent AI Evals: From ADK to Production</h3>
+          <p className="text-text-secondary mb-4">
+            A 7-part journey from shipping a multi-agent system to knowing it actually works. Covers eval infrastructure, routing validation, synthetic data, metrics, and eval-gated deployments — built around a real open-source ADK project.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {['Evals', 'Google ADK', 'Multi-Agent', 'CI/CD', 'Vertex AI', 'Testing'].map(tag => (
+              <span key={tag} className="px-3 py-1 bg-accent-green/10 rounded-full text-xs text-accent-green font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {evalsSeries.map((article, i) => {
+              const isPublished = article.url !== '#';
+              return isPublished ? (
+                <a
+                  key={article.id}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-green hover:text-dark-primary transition-all duration-200"
+                  title={article.title}
+                >
+                  {i + 1}
+                </a>
+              ) : (
+                <div
+                  key={article.id}
+                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
+                  title={`${article.title} (Coming Soon)`}
+                >
+                  {i + 1}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.div>
+
       {/* Featured Series Banner - Distributed Multi-Agent Systems */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
