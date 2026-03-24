@@ -4,10 +4,11 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Writing', href: '#writing' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Talks', href: '#talks' },
   { label: 'Contact', href: '#contact' },
 ];

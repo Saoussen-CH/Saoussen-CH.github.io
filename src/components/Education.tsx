@@ -8,7 +8,7 @@ export function Education() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24">
+    <section id="education" className="py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
