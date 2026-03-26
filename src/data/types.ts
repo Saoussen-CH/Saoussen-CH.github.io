@@ -71,18 +71,23 @@ export interface Skill {
   items: string[];
 }
 
+export interface TalkSession {
+  event: string;
+  date: string;
+  location: string;
+  upcoming?: boolean;
+  sessionizeUrl?: string;
+  eventUrl?: string;
+}
+
 export interface Talk {
   id: string;
   emoji: string;
   type: 'Talk' | 'Workshop';
   title: string;
-  event: string;
-  date: string;
-  location: string;
   description: string;
   highlights: string[];
-  sessionizeUrl?: string;
-  eventUrl?: string;
+  sessions: TalkSession[];
 }
 
 export interface SocialLink {

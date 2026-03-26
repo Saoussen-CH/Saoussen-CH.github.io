@@ -20,7 +20,7 @@ export function Talks() {
           <h2 className="section-title">Talks & Workshops</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {talks.map((talk, index) => (
             <motion.div
               key={talk.id}
@@ -49,33 +49,18 @@ export function Talks() {
                 </span>
               </div>
 
-              {/* Event & Meta */}
-              <h3 className="text-lg font-semibold mb-2 group-hover:text-accent-cyan transition-colors">
-                {talk.event}
-              </h3>
-              <div className="flex flex-wrap gap-3 text-text-muted text-sm mb-3">
-                <span className="flex items-center gap-1">
-                  <Calendar size={14} />
-                  {talk.date}
-                </span>
-                <span className="flex items-center gap-1">
-                  <MapPin size={14} />
-                  {talk.location}
-                </span>
-              </div>
-
-              {/* Talk Title */}
-              <p className="text-accent-violet text-sm font-medium mb-3">
+              {/* Title */}
+              <h3 className="text-lg font-semibold mb-3 group-hover:text-accent-cyan transition-colors">
                 {talk.title}
-              </p>
+              </h3>
 
               {/* Description */}
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="text-text-secondary text-sm leading-relaxed mb-4">
                 {talk.description}
               </p>
 
               {/* Highlights */}
-              <ul className="space-y-1 mt-6">
+              <ul className="space-y-1 mb-6">
                 {talk.highlights.map((highlight, i) => (
                   <li
                     key={i}
@@ -86,33 +71,61 @@ export function Talks() {
                 ))}
               </ul>
 
-              {/* Links */}
-              {(talk.sessionizeUrl || talk.eventUrl) && (
-                <div className="flex flex-wrap gap-3 mt-4">
-                  {talk.sessionizeUrl && (
-                    <a
-                      href={talk.sessionizeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-accent-cyan text-sm font-medium hover:underline"
+              {/* Sessions */}
+              <div className="mt-auto">
+                <p className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-3">
+                  {talk.sessions.length > 1 ? `${talk.sessions.length} Sessions` : '1 Session'}
+                </p>
+                <div className="space-y-2">
+                  {talk.sessions.map((session, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-white/5 px-3 py-2"
                     >
-                      <ExternalLink size={14} />
-                      Sessionize
-                    </a>
-                  )}
-                  {talk.eventUrl && (
-                    <a
-                      href={talk.eventUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-accent-violet text-sm font-medium hover:underline"
-                    >
-                      <ExternalLink size={14} />
-                      Event Page
-                    </a>
-                  )}
+                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-text-secondary">
+                        <span className="font-medium text-text-primary">{session.event}</span>
+                        {session.upcoming && (
+                          <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-accent-cyan/20 text-accent-cyan">
+                            Upcoming
+                          </span>
+                        )}
+                        <span className="flex items-center gap-1 text-text-secondary">
+                          <Calendar size={11} />
+                          {session.date}
+                        </span>
+                        <span className="flex items-center gap-1 text-text-secondary">
+                          <MapPin size={11} />
+                          {session.location}
+                        </span>
+                      </div>
+                      <div className="flex gap-2">
+                        {session.sessionizeUrl && (
+                          <a
+                            href={session.sessionizeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-accent-cyan text-xs font-medium hover:underline"
+                          >
+                            <ExternalLink size={11} />
+                            Sessionize
+                          </a>
+                        )}
+                        {session.eventUrl && (
+                          <a
+                            href={session.eventUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-accent-violet text-xs font-medium hover:underline"
+                          >
+                            <ExternalLink size={11} />
+                            Event
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              )}
+              </div>
             </motion.div>
           ))}
         </div>

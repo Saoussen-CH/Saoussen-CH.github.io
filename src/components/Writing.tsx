@@ -111,7 +111,11 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
         <div className="relative">
           <div className="flex items-center gap-2 mb-3">
             <Sparkles className="text-accent-cyan" size={20} />
-            <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide">New Series • {agentOpsSeries.filter(a => a.url !== '#').length} of {agentOpsSeries.length} Parts Published</span>
+            <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide">
+              {agentOpsSeries.filter(a => a.url !== '#').length === 0
+                ? `Upcoming Series • ${agentOpsSeries.length} Parts`
+                : `New Series • ${agentOpsSeries.filter(a => a.url !== '#').length} of ${agentOpsSeries.length} Parts Published`}
+            </span>
           </div>
           <h3 className="text-2xl font-bold mb-2">Building Production-Ready Multi-Agent Systems on GCP</h3>
           <p className="text-text-secondary mb-4">
@@ -162,7 +166,11 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
         <div className="relative">
           <div className="flex items-center gap-2 mb-3">
             <Sparkles className="text-accent-green" size={20} />
-            <span className="text-accent-green font-semibold text-sm uppercase tracking-wide">New Series • {evalsSeries.filter(a => a.url !== '#').length} of {evalsSeries.length} Parts Published</span>
+            <span className="text-accent-green font-semibold text-sm uppercase tracking-wide">
+              {evalsSeries.filter(a => a.url !== '#').length === 0
+                ? `Upcoming Series • ${evalsSeries.length} Parts`
+                : `New Series • ${evalsSeries.filter(a => a.url !== '#').length} of ${evalsSeries.length} Parts Published`}
+            </span>
           </div>
           <h3 className="text-2xl font-bold mb-2">Multi-Agent AI Evals: From ADK to Production</h3>
           <p className="text-text-secondary mb-4">
