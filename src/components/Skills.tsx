@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+/* import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Building2, Bot, Sparkles, Cloud, Brain, Code } from 'lucide-react';
 import { skills } from '../data';
@@ -61,3 +61,4 @@ export function Skills() {
     </section>
   );
 }
+ */

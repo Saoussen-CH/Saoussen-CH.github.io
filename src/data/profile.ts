@@ -1,4 +1,4 @@
-import { Certification, Education, Experience, Skill, SocialLink, Talk } from './types';
+import { Certification, Education, Experience, SocialLink, Talk } from './types';
 
 // ============================================
 // 👤 PROFILE DATA
@@ -91,7 +91,7 @@ export const certifications: Certification[] = [
     emoji: '🏆',
     title: 'Complete list of 100+ Certifications',
     provider: 'Google,IBM, Udacity, Coursera etc',
-    date: '2016 - 2018',
+    date: '2018 - 2026',
     url: 'https://github.com/Saoussen-CH/Portfolio_of_Courses_and_Certificates'
   },
 ];
@@ -154,38 +154,38 @@ export const experiences: Experience[] = [
 // 🛠️ SKILLS
 // ============================================
 
-export const skills: Skill[] = [
-  {
-    category: 'AI Solution Architecture',
-    emoji: '🏗️',
-    items: ['Solution Design', 'System Architecture', 'Technical Strategy', 'Feasibility Assessment', 'AI Product Management', 'Responsible AI'],
-  },
-  {
-    category: 'Agentic AI',
-    emoji: '🤖',
-    items: ['Google ADK', 'LangChain', 'LangGraph', 'CrewAI', 'AutoGen', 'Multi-Agent Systems', 'Agent Orchestration', 'Tool Use'],
-  },
-  {
-    category: 'Generative AI & LLMs',
-    emoji: '✨',
-    items: ['Gemini', 'GPT-4', 'Claude', 'Llama', 'Mistral', 'RAG', 'Vector Search', 'Prompt Engineering', 'Fine-tuning', 'LLMOps'],
-  },
-  {
-    category: 'MLOps & Cloud',
-    emoji: '☁️',
-    items: ['Vertex AI', 'GCP (Expert)', 'AWS', 'Kubeflow', 'MLflow', 'TFX', 'Terraform', 'Docker', 'CI/CD', 'Cloud-Native Pipelines'],
-  },
-  {
-    category: 'Machine Learning',
-    emoji: '🧠',
-    items: ['TensorFlow', 'PyTorch', 'Scikit-Learn', 'XGBoost', 'Deep Learning', 'NLP', 'Computer Vision', 'Model Deployment'],
-  },
-  {
-    category: 'Data & Programming',
-    emoji: '💻',
-    items: ['Python', 'SQL', 'Apache Spark', 'BigQuery', 'FastAPI', 'TypeScript', 'React', 'Data Pipelines'],
-  },
-];
+/*   export const skills: Skill[] = [
+    {
+      category: 'AI Solution Architecture',
+      emoji: '🏗️',
+      items: ['Solution Design', 'System Architecture', 'Technical Strategy', 'Feasibility Assessment', 'AI Product Management', 'Responsible AI'],
+    },
+    {
+      category: 'Agentic AI',
+      emoji: '🤖',
+      items: ['Google ADK', 'LangChain', 'LangGraph', 'CrewAI', 'AutoGen', 'Multi-Agent Systems', 'Agent Orchestration', 'Tool Use'],
+    },
+    {
+      category: 'Generative AI & LLMs',
+      emoji: '✨',
+      items: ['Gemini', 'GPT-4', 'Claude', 'Llama', 'Mistral', 'RAG', 'Vector Search', 'Prompt Engineering', 'Fine-tuning', 'LLMOps'],
+    },
+    {
+      category: 'MLOps & Cloud',
+      emoji: '☁️',
+      items: ['Vertex AI', 'GCP (Expert)', 'AWS', 'Kubeflow', 'MLflow', 'TFX', 'Terraform', 'Docker', 'CI/CD', 'Cloud-Native Pipelines'],
+    },
+    {
+      category: 'Machine Learning',
+      emoji: '🧠',
+      items: ['TensorFlow', 'PyTorch', 'Scikit-Learn', 'XGBoost', 'Deep Learning', 'NLP', 'Computer Vision', 'Model Deployment'],
+    },
+    {
+      category: 'Data & Programming',
+      emoji: '💻',
+      items: ['Python', 'SQL', 'Apache Spark', 'BigQuery', 'FastAPI', 'TypeScript', 'React', 'Data Pipelines'],
+    },
+  ]; */
 
 // ============================================
 // 🎓 EDUCATION

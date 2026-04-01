@@ -3,7 +3,7 @@ import {
   Navbar,
   Hero,
   About,
-  Skills,
+  //Skills,
   Projects,
   Writing,
   Experience,
