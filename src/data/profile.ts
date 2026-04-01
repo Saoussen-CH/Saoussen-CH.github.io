@@ -91,8 +91,8 @@ export const certifications: Certification[] = [
     emoji: '🏆',
     title: 'Complete list of 100+ Certifications',
     provider: 'Google,IBM, Udacity, Coursera etc',
-    date: '2019 • Top 3% of 10,000',
-    url: 'mailto:'
+    date: '2016 - 2018',
+    url: 'https://github.com/Saoussen-CH/Portfolio_of_Courses_and_Certificates'
   },
 ];
 
@@ -229,19 +229,19 @@ export const talks: Talk[] = [
     emoji: '🛠️',
     type: 'Workshop',
     title: 'Building & Deploying Multi-Agent Systems with Google ADK & Vertex AI',
-    description: 'Hands-on workshop where participants build production-ready multi-agent AI systems from scratch using Google\'s Agent Development Kit (ADK) and Vertex AI Agent Engine. Progressing through 11 practical steps — from creating a first AI agent to deploying a complete React + FastAPI stack on Cloud Run.',
+    description: 'Hands-on workshop on building full-stack Multi-Agent Systems using Google ADK & Vertex AI.',
     highlights: [
       'First Agent: Creating your first AI agent with Google ADK',
       'Custom Tools: Building specialized tools to extend agent capabilities',
       'Agent Teams: Coordinating multiple agents working together',
-      'Architecture Patterns: LLM-Driven vs Workflow-Driven architectures and design trade-offs',
-      'Sequential Workflows: Sequential pipelines and agent coordination',
-      'Iterative Workflows: Creating quality improvement loops',
-      'Parallel Workflows: Executing agents in parallel for efficiency',
-      'Callbacks, Context & Memory: Sessions/state, artifacts, and memory with ADK\'s LoggingPlugin',
+      'Choosing the Right Architecture: Architecture Patterns and exploring design trade-offs balancing Cost, Latency, and Safety (remember, every agent hop is an extra LLM call!)',
+      'Sequential Workflows: Building deterministic pipelines for fixed steps',
+      'Iterative Workflows: Creating quality improvement loops with LoopAgent',
+      'Parallel Workflows: Using ParallelAgent for independent sub-tasks',
+      'Callbacks, Context, Memory, Observability : Sessions/state, artifacts, memory and ADK\'s LoggingPlugin',
       'Capstone Project: Building the complete Content Creation Studio',
-      'Deployment: Deploy agents to Agent Engine on GCP',
-      'Full-Stack Cloud Run: Deploy full-stack app (React + FastAPI) to Cloud Run',
+      'Deployment: Moving agents to Vertex AI Agent Engine',
+      'Full-Stack Cloud Run: Deploying the complete React + FastAPI stack to Cloud Run',
     ],
     sessions: [
       {
