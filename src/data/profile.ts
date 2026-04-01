@@ -284,6 +284,22 @@ export const talks: Talk[] = [
     ],
   },
   {
+    id: 'workshop-distributed-multi-agent-stack',
+    emoji: '🚀',
+    type: 'Workshop',
+    title: 'Building Distributed Multi-Agent Systems with Google AI Stack: ADK, MCP, A2A, Vertex AI Agent Engine',
+    description: 'A technical deep dive into designing autonomous, decentralized agent ecosystems using the Google AI stack. The next frontier in AI isn\'t just bigger models — it\'s distributed, collaborating agents. This code-first session examines how specialized, distributed agents collaborate to solve complex problems, covering Google ADK, A2A Protocol for agent-to-agent communication, and MCP for secure tool integration. The session showcases a distributed architecture where an orchestrator on Vertex AI Agent Engine coordinates five specialist agents on Cloud Run to generate a complete, multi-stage marketing campaign with project management tasks synced to Notion — all from a single prompt.',
+    highlights: [
+      'Practical guidance on agent architecture patterns, orchestration, tooling, and scaling agentic systems on Google Cloud',
+      'Code-first introduction to Google ADK for agent building',
+      'A2A Protocol for agent-to-agent communication',
+      'Model Context Protocol (MCP) for secure tool integration',
+      'Hands-on experience deploying agentic workloads to Vertex AI Agent Engine and Cloud Run',
+      'Intuition to avoid the most common pitfalls in distributed agent system design',
+    ],
+    sessions: [],
+  },
+  {
     id: 'talk-distributed-multi-agent',
     emoji: '🎤',
     type: 'Talk',
