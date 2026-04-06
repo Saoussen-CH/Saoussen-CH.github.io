@@ -36,7 +36,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Courses Completed' },
     { value: '42', label: 'Technical Articles' },
-    { value: '7+', label: 'Technical Talks & Workshops' },
+    { value: '8+', label: 'Technical Talks & Workshops' },
   ],
 };
 
@@ -245,6 +245,13 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
+        event: 'Build with AI: Masr Edition',
+        date: 'May 2026',
+        location: 'Egypt',
+        upcoming: true,
+        eventUrl: 'https://rsvp.withgoogle.com/events/build-with-ai-masr',
+      },
+      {
         event: 'Artificial Intelligence National Summit INSAT',
         date: 'April 2026',
         location: 'Tunis, Tunisia',
@@ -262,6 +269,7 @@ export const talks: Talk[] = [
         date: 'April 2026',
         location: 'Kraków, Poland',
         upcoming: true,
+        eventUrl: 'https://gdg.community.dev/events/details/google-gdg-krakow-presents-build-with-ai-3-multi-agent-systems-with-adk-online-workshop/',
       },
       {
         event: 'RAMATECH 4.0 2026',
@@ -270,10 +278,10 @@ export const talks: Talk[] = [
         eventUrl: 'https://www.linkedin.com/posts/gdg-beja_ramatech-gdgbeja-devnass-activity-7435957433782587392-qh_B?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyn6mwBjRC3IaJeItlnRqhYpqi5EhPCmbU',
       },
       {
-        event: 'AICD - Mahdia 2026',
+        event: 'AI COMMUNITY DAYS - Mahdia 2026',
         date: 'February 2026',
         location: 'Mahdia, Tunisia',
-        sessionizeUrl: 'https://sessionize.com/s/saoussen-chaabnia/building-and-deploying-multi-agent-systems-with-ad/160854',
+        eventUrl: 'https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A7427717944765210625/',
       },
       {
         event: 'DevFest Fusion 4.0 2025',
