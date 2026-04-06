@@ -34,7 +34,7 @@ export const profile = {
   stats: [
     { value: 'GDE', label: 'Google Developer Expert • Cloud AI', featured: true },
     { value: '3x', label: 'GCP Certified' },
-    { value: '100+', label: 'Courses Completed' },
+    { value: '100+', label: 'Certificates' },
     { value: '42', label: 'Technical Articles' },
     { value: '8+', label: 'Technical Talks & Workshops' },
   ],
