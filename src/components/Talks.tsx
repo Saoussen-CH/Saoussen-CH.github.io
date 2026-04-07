@@ -17,7 +17,7 @@ export function Talks() {
           className="text-center mb-12"
         >
           <p className="section-label">Speaking</p>
-          <h2 className="section-title">Speaking</h2>
+          <h2 className="section-title">Talks & Workshops</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
