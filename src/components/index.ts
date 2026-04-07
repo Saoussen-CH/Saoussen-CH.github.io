@@ -1,6 +1,7 @@
 export { Background } from './Background';
 export { Navbar } from './Navbar';
 export { Hero } from './Hero';
+export { StatsBar } from './StatsBar';
 export { About } from './About';
 //export { Skills } from './Skills';
 export { Projects } from './Projects';

@@ -9,7 +9,7 @@ const navItems = [
   // { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Writing', href: '#writing' },
-  { label: 'Talks', href: '#talks' },
+  { label: 'Speaking', href: '#talks' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -35,7 +35,7 @@ export function Navbar() {
           : 'bg-dark-primary/80 backdrop-blur-xl border-b border-white/5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
         {/* Logo with Profile Photo */}
         <a href="#">
           <img
@@ -45,8 +45,8 @@ export function Navbar() {
           />
         </a>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex gap-8">
+        {/* Desktop Navigation — centered */}
+        <ul className="hidden md:flex gap-8 justify-center">
           {navItems.map((item) => (
             <li key={item.href}>
               <a
@@ -60,13 +60,15 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-text-primary"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Right: Mobile Menu Button */}
+        <div className="flex items-center justify-end">
+          <button
+            className="md:hidden text-text-primary"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

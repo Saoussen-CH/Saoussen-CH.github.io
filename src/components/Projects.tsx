@@ -1,15 +1,15 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, Github, Palette, Headphones, PenTool, Wrench, Film, Rocket } from 'lucide-react';
+import { ArrowRight, Github, Bot, Palette, PenTool, GitBranch, BarChart2, Database } from 'lucide-react';
 import { projects } from '../data';
 
 const projectIconMap: Record<string, React.ReactNode> = {
-  'ai-creative-studio': <Palette size={24} className="text-white" />,
-  'customer-support-agent': <Headphones size={24} className="text-white" />,
-  'content-creation-mas': <PenTool size={24} className="text-white" />,
-  'mlops-gcp': <Wrench size={24} className="text-white" />,
-  'sentiment-analysis': <Film size={24} className="text-white" />,
-  'census-prediction': <Rocket size={24} className="text-white" />,
+  'adk-multiagent-production-template': <Bot size={24} className="text-accent-cyan" />,
+  'ai-creative-studio': <Palette size={24} className="text-accent-violet" />,
+  'content-creation-mas': <PenTool size={24} className="text-accent-cyan" />,
+  'mlops-gcp': <GitBranch size={24} className="text-accent-gold" />,
+  'sentiment-analysis': <BarChart2 size={24} className="text-accent-magenta" />,
+  'census-prediction': <Database size={24} className="text-accent-cyan" />,
 };
 
 export function Projects() {
@@ -40,8 +40,8 @@ export function Projects() {
             >
               {/* Header */}
               <div className="p-6 bg-gradient-to-br from-dark-tertiary to-dark-secondary">
-                <div className="w-14 h-14 bg-gradient-main rounded-xl flex items-center justify-center mb-4">
-                  {projectIconMap[project.id] || <Rocket size={24} className="text-white" />}
+                <div className="w-12 h-12 glass rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  {projectIconMap[project.id] || <Bot size={24} className="text-accent-cyan" />}
                 </div>
                 <h3 className="text-xl font-semibold">{project.title}</h3>
               </div>

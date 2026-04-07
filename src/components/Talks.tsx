@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Calendar, Mic, PresentationIcon, ExternalLink } from 'lucide-react';
+import { Calendar, Mic, PresentationIcon, ExternalLink } from 'lucide-react';
 import { talks } from '../data';
 
 export function Talks() {
@@ -17,7 +17,7 @@ export function Talks() {
           className="text-center mb-12"
         >
           <p className="section-label">Speaking</p>
-          <h2 className="section-title">Talks & Workshops</h2>
+          <h2 className="section-title">Speaking</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -73,62 +73,58 @@ export function Talks() {
 
               {/* Sessions */}
               <div className="mt-auto">
-                <p className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-3">
-                  {talk.sessions.length > 1 ? `${talk.sessions.length} Sessions` : '1 Session'}
+                <p className="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-3">
+                  EVENTS
                 </p>
                 <div className="space-y-2">
-                  {talk.sessions.map((session, i) => (
-                    <div
-                      key={i}
-                      className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-white/5 px-3 py-2"
-                    >
-                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-text-secondary">
-                        <span className="font-medium text-text-primary">{session.event}</span>
-                        {session.upcoming && (
-                          <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-accent-cyan/20 text-accent-cyan">
+                  {talk.sessions.map((session, i) => {
+                    const url = session.eventUrl || session.sessionizeUrl;
+                    const nameEl = url ? (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-text-primary text-xs hover:text-accent-cyan transition-colors inline-flex items-center gap-1"
+                      >
+                        {session.event}
+                        <ExternalLink size={10} className="opacity-60" />
+                      </a>
+                    ) : (
+                      <span className="font-semibold text-text-primary text-xs">{session.event}</span>
+                    );
+                    return (
+                      <div
+                        key={i}
+                        className="flex items-center justify-between gap-3 rounded-xl bg-white/5 px-3 py-2.5"
+                      >
+                        <div className="flex items-start min-w-0">
+                          <div className="min-w-0">
+                            {nameEl}
+                            <p className="flex items-center gap-1 text-[12px] text-text-secondary mt-0.5">
+                              <Calendar size={11} />
+                              {session.date} · {session.location}
+                            </p>
+                          </div>
+                        </div>
+                        {session.upcoming ? (
+                          <span className="flex-shrink-0 px-2.5 py-1 rounded-full text-[11px] font-semibold border border-accent-cyan/40 text-accent-cyan bg-accent-cyan/10 whitespace-nowrap">
                             Upcoming
                           </span>
-                        )}
-                        <span className="flex items-center gap-1 text-text-secondary">
-                          <Calendar size={11} />
-                          {session.date}
-                        </span>
-                        <span className="flex items-center gap-1 text-text-secondary">
-                          <MapPin size={11} />
-                          {session.location}
-                        </span>
-                      </div>
-                      <div className="flex gap-2">
-                        {session.sessionizeUrl && (
-                          <a
-                            href={session.sessionizeUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-accent-cyan text-xs font-medium hover:underline"
-                          >
-                            <ExternalLink size={11} />
-                            Sessionize
-                          </a>
-                        )}
-                        {session.eventUrl && (
-                          <a
-                            href={session.eventUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-accent-violet text-xs font-medium hover:underline"
-                          >
-                            <ExternalLink size={11} />
-                            Event
-                          </a>
+                        ) : (
+                          <span className="flex-shrink-0 px-2.5 py-1 rounded-full text-[11px] font-semibold border border-emerald-400/40 text-emerald-400 bg-emerald-400/10 whitespace-nowrap">
+                            Delivered
+                          </span>
                         )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
+
       </div>
     </section>
   );

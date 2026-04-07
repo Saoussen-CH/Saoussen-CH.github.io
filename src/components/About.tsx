@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Star, Cloud, Sparkles, Diamond } from 'lucide-react';
 import { profile } from '../data';
 
 export function About() {
@@ -28,26 +28,46 @@ export function About() {
             ))}
           </motion.div>
 
-          {/* Stats Grid */}
+          {/* Achievement Cards */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4"
+            className="flex flex-col gap-3"
           >
-            {profile.stats.map((stat, index) => (
+            {[
+              {
+                icon: <Star size={18} fill="currentColor" className="text-accent-gold" />,
+                title: 'Google Developer Expert',
+                desc: 'Recognized by Google for expertise in Cloud AI — part of an exclusive global community.',
+              },
+              {
+                icon: <Cloud size={18} fill="currentColor" className="text-accent-cyan" />,
+                title: '3× Google Cloud Certified',
+                desc: 'Professional ML Engineer · Cloud Architect · Data Engineer, all active 2025–2026.',
+              },
+              {
+                icon: <Diamond size={18} fill="currentColor" className="text-accent-violet" />,
+                title: 'International Speaker',
+                desc: 'Workshops & talks across Europe and MENA on Agentic AI & the Google AI stack.',
+              },
+              {
+                icon: <Sparkles size={18} fill="currentColor" className="text-accent-cyan" />,
+                title: 'Technical Thought Leader',
+                desc: '42+ articles on Medium & Google Cloud publication.',
+              },
+            ].map((item, index) => (
               <motion.div
-                key={stat.label}
+                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className={`glass rounded-2xl p-6 text-center glass-hover${'featured' in stat && stat.featured ? ' col-span-2' : ''}`}
+                className="flex items-start gap-4 py-5 border-b border-white/10 last:border-0"
               >
-                <div className="text-4xl font-bold gradient-text mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-text-secondary text-sm">
-                  {stat.label}
+                <div className="mt-1 flex-shrink-0">{item.icon}</div>
+                <div>
+                  <div className="font-semibold text-text-primary mb-1 text-base">{item.title}</div>
+                  <div className="text-text-secondary text-sm leading-relaxed">{item.desc}</div>
                 </div>
               </motion.div>
             ))}

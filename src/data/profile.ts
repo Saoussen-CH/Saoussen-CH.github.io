@@ -6,11 +6,11 @@ import { Certification, Education, Experience, SocialLink, Talk } from './types'
 
 export const profile = {
   name: 'Saoussen Chaabnia',
-  title: 'AI Solutions Engineer • Agentic AI • AI Product • Google Developer Expert',
+  title: 'AI Solutions Engineer • Agentic AI • AI Product Management',
   tagline: 'Designing production-grade AI solutions that align technology, business goals, and user impact',
   email: 'saoussen.chaabnia.pro@gmail.com',
   location: 'Tunisia',
-  availability: 'Open for Consulting',
+  availability: 'Open to Consulting & Speaking',
   
   // Hero section
   heroDescription: `I design and deliver production-grade AI solutions that align technology, business goals,
@@ -32,11 +32,11 @@ export const profile = {
 
   // Stats
   stats: [
-    { value: 'GDE', label: 'Google Developer Expert • Cloud AI', featured: true },
+    { value: 'GDE', label: 'Google Developer Expert', featured: true },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '42', label: 'Technical Articles' },
-    { value: '8+', label: 'Technical Talks & Workshops' },
+    { value: '9+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -321,6 +321,13 @@ export const talks: Talk[] = [
       'Architecture patterns, tooling, and production considerations on Google Cloud',
     ],
     sessions: [
+      {
+        event: 'AI COMMUNITY DAYS - Tunis 2026',
+        date: 'May 2026',
+        location: 'Tunis, Tunisia',
+        upcoming: true,
+        eventUrl: 'https://aicommunitydays.ai/events/tunis-2026?tab=speakers',
+      },
       {
         event: 'DevFest Ahlen 2025',
         date: 'December 2025',
