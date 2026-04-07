@@ -122,6 +122,8 @@ export function Hero() {
             <img
               src="/profile-photo.png"
               alt={`${profile.name} - ${profile.title}`}
+              loading="eager"
+              fetchPriority="high"
               className="relative w-80 h-80 object-cover rounded-3xl border border-white/20 shadow-2xl"
             />
           </div>
