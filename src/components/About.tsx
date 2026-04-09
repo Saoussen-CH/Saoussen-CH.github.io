@@ -10,6 +10,15 @@ export function About() {
   return (
     <section id="about" className="py-24 px-6 md:px-12 lg:px-24 bg-dark-secondary">
       <div className="max-w-6xl mx-auto">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-12"
+        >
+          <p className="section-label">About Me</p>
+        </motion.div>
+
         <div ref={ref} className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
@@ -17,8 +26,7 @@ export function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">About Me</p>
-            <h2 className="section-title mb-6">
+            <h2 className="text-xl md:text-2xl font-bold mb-6 whitespace-nowrap">
               Technology × Business × Impact
             </h2>
             {profile.aboutParagraphs.map((paragraph, index) => (
@@ -39,12 +47,12 @@ export function About() {
               {
                 icon: <Star size={18} fill="currentColor" className="text-accent-gold" />,
                 title: 'Google Developer Expert',
-                desc: 'Recognized by Google for expertise in Cloud AI — part of an exclusive global community.',
+                desc: 'Recognized by Google for expertise in Cloud AI, part of an exclusive global community.',
               },
               {
                 icon: <Cloud size={18} fill="currentColor" className="text-accent-cyan" />,
                 title: '3× Google Cloud Certified',
-                desc: 'Professional ML Engineer · Cloud Architect · Data Engineer, all active 2025–2026.',
+                desc: 'Professional ML Engineer · Cloud Architect · Data Engineer, all active 2025-2026.',
               },
               {
                 icon: <Diamond size={18} fill="currentColor" className="text-accent-violet" />,

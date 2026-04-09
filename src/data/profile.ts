@@ -13,9 +13,7 @@ export const profile = {
   availability: 'Open to Consulting & Speaking',
   
   // Hero section
-  heroDescription: `I design and deliver production-grade AI solutions that align technology, business goals,
-    and user impact. Google Developer Expert (GDE) in Cloud AI. Specializing in Agentic AI, AI Solution Architecture, and AI Product Management.
-    3x Google Cloud Certified. Helping teams make the right technical and product decisions.`,
+  heroDescription: `I design and ship production-grade AI solutions, from architecture to deployment. Helping teams make the right technical and product decisions that drive real business outcomes.`,
   
   // About section - Updated to match LinkedIn
   aboutParagraphs: [
@@ -35,7 +33,7 @@ export const profile = {
     { value: 'GDE', label: 'Google Developer Expert', featured: true },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
-    { value: '42', label: 'Technical Articles' },
+    { value: '42', label: 'Articles' },
     { value: '9+', label: 'Talks & Workshops' },
   ],
 };

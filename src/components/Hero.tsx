@@ -75,18 +75,67 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-text-secondary mb-8 text-justify"
+            className="text-lg text-text-secondary mb-8"
           >
             {profile.heroDescription}
           </motion.p>
 
-          {/* Social icons + Schedule a Call */}
+          {/* Schedule a Call */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center gap-3 flex-wrap"
+            className="mb-6"
           >
+            <a href="https://calendly.com/saoussen-chaabnia-pro/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+              Schedule a Call
+              <ArrowRight size={16} />
+            </a>
+          </motion.div>
+
+          {/* Stats bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <div className="grid grid-cols-5 divide-x divide-white/10 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_4px_24px_rgba(0,0,0,0.2)] px-4 py-3">
+              {profile.stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center justify-center text-center px-2 min-w-0">
+                  <div className={`text-base font-bold ${'featured' in stat && stat.featured ? 'text-accent-gold' : 'text-text-primary'}`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-text-secondary text-[10px] mt-0.5 leading-tight">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* Right: Profile Photo + Social Icons */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="hidden lg:flex flex-col items-end justify-center"
+        >
+          <div className="flex flex-col items-center gap-5">
+          <div className="relative">
+            {/* Glow background */}
+            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-accent-cyan/50 via-accent-violet/40 to-accent-magenta/30 blur-3xl opacity-80" />
+            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-accent-violet/30 to-accent-cyan/20 blur-xl" />
+            {/* Photo */}
+            <img
+              src="/profile-photo.png"
+              alt={`${profile.name} - ${profile.title}`}
+              loading="eager"
+              fetchPriority="high"
+              className="relative w-80 h-80 object-cover rounded-3xl border border-white/20 shadow-2xl"
+            />
+          </div>
+          {/* Social Icons */}
+          <div className="flex items-center gap-3">
             {socialLinks.map(link => (
               <a
                 key={link.name}
@@ -99,55 +148,11 @@ export function Hero() {
                 {iconMap[link.icon]}
               </a>
             ))}
-            <div className="w-px h-8 bg-white/10 mx-1" />
-            <a href="https://calendly.com/saoussen-chaabnia-pro/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
-              Schedule a Call
-              <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Right: Profile Photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden lg:flex items-center justify-end"
-        >
-          <div className="relative">
-            {/* Glow background — stronger */}
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-accent-cyan/50 via-accent-violet/40 to-accent-magenta/30 blur-3xl opacity-80" />
-            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-accent-violet/30 to-accent-cyan/20 blur-xl" />
-            {/* Photo */}
-            <img
-              src="/profile-photo.png"
-              alt={`${profile.name} - ${profile.title}`}
-              loading="eager"
-              fetchPriority="high"
-              className="relative w-80 h-80 object-cover rounded-3xl border border-white/20 shadow-2xl"
-            />
+          </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Stats overlay — pinned to bottom of hero */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="w-full px-6 md:px-12 lg:px-24 pb-16 relative z-20 -mb-8"
-      >
-        <div className="max-w-3xl mx-auto rounded-xl border border-white/15 bg-white/5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] px-6 py-3 grid grid-cols-5 divide-x divide-white/10">
-          {profile.stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center justify-center text-center px-3">
-              <div className={`text-lg font-bold ${'featured' in stat && stat.featured ? 'text-accent-gold' : 'text-text-primary'}`}>
-                {stat.value}
-              </div>
-              <div className="text-text-secondary text-[10px] mt-0.5">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
 
     </section>
   );
