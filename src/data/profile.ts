@@ -259,14 +259,12 @@ export const talks: Talk[] = [
         event: 'Build with AI 2026 x IWD',
         date: 'April 2026',
         location: 'Ahlen, Germany',
-        upcoming: true,
         eventUrl: 'https://gdg.community.dev/events/details/google-gdg-ahlen-presents-build-with-ai-2026-x-iwd-gemini-cli-hackathon-online/',
       },
       {
         event: 'Build With AI Kraków',
         date: 'April 2026',
         location: 'Kraków, Poland',
-        upcoming: true,
         eventUrl: 'https://gdg.community.dev/events/details/google-gdg-krakow-presents-build-with-ai-3-multi-agent-systems-with-adk-online-workshop/',
       },
       {
