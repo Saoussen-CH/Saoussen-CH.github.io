@@ -8,10 +8,11 @@ export const projects: Project[] = [
   {
     id: 'adk-multiagent-production-template',
     emoji: '🤝',
-    title: 'Multi-Agent Customer Support System',
+    title: 'Production-ready Full-Stack Multi-Agent Customer Support System on GCP',
     description: 'Production-ready full-stack AI support platform with hierarchical multi-agent orchestration, RAG-powered semantic search, Memory Bank for cross-session persistence, and validated refund workflows. Features Terraform IaC across dev/staging/prod, CI/CD with Cloud Build, Model Armor, 5-stage eval pipeline, and canary deployments.',
     tags: ['Google ADK', 'Vertex AI', 'React', 'FastAPI', 'RAG', 'Firestore', 'Terraform', 'Model Armor'],
     githubUrl: 'https://github.com/Saoussen-CH/adk-multiagent-production-template',
+    featured: true,
   },
   {
     id: 'ai-creative-studio',
@@ -44,6 +45,7 @@ export const projects: Project[] = [
     description: 'Complete MLOps solution featuring Terraform IaC across dev/test/prod environments, Vertex Pipelines, CI/CD with Cloud Build, continuous training, and comprehensive monitoring.',
     tags: ['Terraform', 'Vertex AI', 'Kubeflow', 'Cloud Build', 'TensorFlow'],
     githubUrl: 'https://github.com/Saoussen-CH/production-ready-MLOps-on-GCP',
+    featured: true,
   },
   {
     id: 'sentiment-analysis',

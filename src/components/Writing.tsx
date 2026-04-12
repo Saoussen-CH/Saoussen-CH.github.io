@@ -1,6 +1,6 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { ArrowRight, FileText, ExternalLink, Sparkles, PenLine, BookOpen, Mic, Newspaper } from 'lucide-react';
+import { ArrowRight, FileText, ExternalLink, Sparkles, PenLine, BookOpen, Mic, Newspaper, ChevronDown } from 'lucide-react';
 import { articles, publications } from '../data';
 
 type Tab = 'articles' | 'publications';
@@ -19,7 +19,7 @@ export function Writing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-8"
         >
-          <p className="section-label">Writing</p>
+          <p className="section-label">Articles</p>
           <h2 className="section-title">Articles & Publications</h2>
           <p className="text-text-secondary mt-4 max-w-xl mx-auto">
             Sharing knowledge through technical writing and academic research
@@ -70,6 +70,7 @@ export function Writing() {
 
 function ArticlesTab({ isInView }: { isInView: boolean }) {
   const [showAll, setShowAll] = useState(false);
+  const [openSeries, setOpenSeries] = useState<string | null>('agentops');
 
   // New series: AgentOps Mindset
   const agentOpsSeries = articles.filter(a => a.id.startsWith('agentops-'));
@@ -101,270 +102,242 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      {/* New Series Banner - AgentOps Mindset */}
+      {/* AgentOps Series */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        className="mb-6 p-6 glass rounded-2xl border border-accent-cyan/30 relative overflow-hidden"
+        className="mb-6 glass rounded-2xl border border-accent-cyan/30 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="text-accent-cyan" size={20} />
-            <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide">
-              {agentOpsSeries.filter(a => a.url !== '#').length === 0
-                ? `Upcoming Series • ${agentOpsSeries.length} Parts`
-                : `New Series • ${agentOpsSeries.filter(a => a.url !== '#').length} of ${agentOpsSeries.length} Parts Published`}
-            </span>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <button
+          className="relative w-full flex items-center justify-between gap-4 p-6 text-left"
+          onClick={() => setOpenSeries(openSeries === 'agentops' ? null : 'agentops')}
+        >
+          <div className="flex items-center gap-3 min-w-0">
+            <Sparkles className="text-accent-cyan flex-shrink-0" size={20} />
+            <div className="min-w-0">
+              <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide block mb-0.5">{agentOpsSeries.length}-Part Series</span>
+              <h3 className="text-lg font-bold leading-snug mb-1">Building Production-Ready Multi-Agent Systems on GCP</h3>
+              {openSeries !== 'agentops' && <p className="text-text-secondary text-xs line-clamp-1">Multi-agent design, fullstack AI app, CI/CD, Terraform IaC, Model Armor, eval-gated canary deployments on GCP.</p>}
+            </div>
           </div>
-          <h3 className="text-2xl font-bold mb-2">Building Production-Ready Multi-Agent Systems on GCP</h3>
-          <p className="text-text-secondary mb-4">
-            A 6-part series covering multi-agent design, fullstack AI app, CI/CD, Terraform IaC, resilience patterns, Model Armor, eval-gated canary deployments, and nightly regression on GCP.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {['AgentOps', 'Google ADK', 'Vertex AI', 'Terraform', 'CI/CD', 'Production'].map(tag => (
-              <span key={tag} className="px-3 py-1 bg-accent-cyan/10 rounded-full text-xs text-accent-cyan font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {agentOpsSeries.map((article, i) => {
-              const isPublished = article.url !== '#';
-              return isPublished ? (
-                <a
-                  key={article.id}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-cyan hover:text-dark-primary transition-all duration-200"
-                  title={article.title}
-                >
-                  {i + 1}
-                </a>
-              ) : (
-                <div
-                  key={article.id}
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
-                  title={`${article.title} (Coming Soon)`}
-                >
-                  {i + 1}
+          <ChevronDown size={20} className={`flex-shrink-0 text-text-secondary transition-transform duration-300 ${openSeries === 'agentops' ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence initial={false}>
+          {openSeries === 'agentops' && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+              <div className="px-6 pb-6 border-t border-white/10 pt-4 relative">
+                <p className="text-text-secondary mb-4">A 6-part series covering multi-agent design, fullstack AI app, CI/CD, Terraform IaC, resilience patterns, Model Armor, eval-gated canary deployments, and nightly regression on GCP.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['AgentOps', 'Google ADK', 'Vertex AI', 'Terraform', 'CI/CD', 'Production'].map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-accent-cyan/10 rounded-full text-xs text-accent-cyan font-medium">{tag}</span>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+                <div className="flex flex-wrap gap-2">
+                  {agentOpsSeries.map((article, i) => {
+                    const isPublished = article.url !== '#';
+                    return isPublished ? (
+                      <a key={article.id} href={article.url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-cyan hover:text-dark-primary transition-all duration-200" title={article.title}>{i + 1}</a>
+                    ) : (
+                      <div key={article.id} className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed" title={`${article.title} (Coming Soon)`}>{i + 1}</div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
-      {/* New Series Banner - Multi-Agent AI Evals */}
+      {/* Evals Series */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        className="mb-6 p-6 glass rounded-2xl border border-accent-green/30 relative overflow-hidden"
+        className="mb-6 glass rounded-2xl border border-accent-green/30 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-green/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="text-accent-green" size={20} />
-            <span className="text-accent-green font-semibold text-sm uppercase tracking-wide">
-              {evalsSeries.filter(a => a.url !== '#').length === 0
-                ? `Upcoming Series • ${evalsSeries.length} Parts`
-                : `New Series • ${evalsSeries.filter(a => a.url !== '#').length} of ${evalsSeries.length} Parts Published`}
-            </span>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-green/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <button className="relative w-full flex items-center justify-between gap-4 p-6 text-left" onClick={() => setOpenSeries(openSeries === 'evals' ? null : 'evals')}>
+          <div className="flex items-center gap-3 min-w-0">
+            <Sparkles className="text-accent-green flex-shrink-0" size={20} />
+            <div className="min-w-0">
+              <span className="text-accent-green font-semibold text-sm uppercase tracking-wide block mb-0.5">{evalsSeries.length}-Part Series</span>
+              <h3 className="text-lg font-bold leading-snug mb-1">Multi-Agent AI Evals: From ADK to Production</h3>
+              {openSeries !== 'evals' && <p className="text-text-secondary text-xs line-clamp-1">Eval infrastructure, routing validation, synthetic data, metrics, and eval-gated deployments for real ADK projects.</p>}
+            </div>
           </div>
-          <h3 className="text-2xl font-bold mb-2">Multi-Agent AI Evals: From ADK to Production</h3>
-          <p className="text-text-secondary mb-4">
-            A 7-part journey from shipping a multi-agent system to knowing it actually works. Covers eval infrastructure, routing validation, synthetic data, metrics, and eval-gated deployments — built around a real open-source ADK project.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {['Evals', 'Google ADK', 'Multi-Agent', 'CI/CD', 'Vertex AI', 'Testing'].map(tag => (
-              <span key={tag} className="px-3 py-1 bg-accent-green/10 rounded-full text-xs text-accent-green font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {evalsSeries.map((article, i) => {
-              const isPublished = article.url !== '#';
-              return isPublished ? (
-                <a
-                  key={article.id}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-green hover:text-dark-primary transition-all duration-200"
-                  title={article.title}
-                >
-                  {i + 1}
-                </a>
-              ) : (
-                <div
-                  key={article.id}
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
-                  title={`${article.title} (Coming Soon)`}
-                >
-                  {i + 1}
+          <ChevronDown size={20} className={`flex-shrink-0 text-text-secondary transition-transform duration-300 ${openSeries === 'evals' ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence initial={false}>
+          {openSeries === 'evals' && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+              <div className="px-6 pb-6 border-t border-white/10 pt-4 relative">
+                <p className="text-text-secondary mb-4">A 7-part journey from shipping a multi-agent system to knowing it actually works. Covers eval infrastructure, routing validation, synthetic data, metrics, and eval-gated deployments, built around a real open-source ADK project.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Evals', 'Google ADK', 'Multi-Agent', 'CI/CD', 'Vertex AI', 'Testing'].map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-accent-green/10 rounded-full text-xs text-accent-green font-medium">{tag}</span>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+                <div className="flex flex-wrap gap-2">
+                  {evalsSeries.map((article, i) => {
+                    const isPublished = article.url !== '#';
+                    return isPublished ? (
+                      <a key={article.id} href={article.url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-green hover:text-dark-primary transition-all duration-200" title={article.title}>{i + 1}</a>
+                    ) : (
+                      <div key={article.id} className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed" title={`${article.title} (Coming Soon)`}>{i + 1}</div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
-      {/* Featured Series Banner - Distributed Multi-Agent Systems */}
+      {/* Distributed MAS Series */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        className="mb-6 p-6 glass rounded-2xl border border-accent-magenta/30 relative overflow-hidden"
+        className="mb-6 glass rounded-2xl border border-accent-magenta/30 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-magenta/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="text-accent-magenta" size={20} />
-            <span className="text-accent-magenta font-semibold text-sm uppercase tracking-wide">New Series • {distributedMasSeries.filter(a => a.date !== 'Coming Soon').length} of {distributedMasSeries.length} Parts Published</span>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-magenta/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <button className="relative w-full flex items-center justify-between gap-4 p-6 text-left" onClick={() => setOpenSeries(openSeries === 'distributed' ? null : 'distributed')}>
+          <div className="flex items-center gap-3 min-w-0">
+            <Sparkles className="text-accent-magenta flex-shrink-0" size={20} />
+            <div className="min-w-0">
+              <span className="text-accent-magenta font-semibold text-sm uppercase tracking-wide block mb-0.5">{distributedMasSeries.length}-Part Series</span>
+              <h3 className="text-lg font-bold leading-snug mb-1">Building Distributed Multi-Agent Systems with Google's AI Stack</h3>
+              {openSeries !== 'distributed' && <p className="text-text-secondary text-xs line-clamp-1">Production-ready distributed multi-agent architectures using Google Cloud's AI infrastructure, A2A protocol, and orchestration patterns.</p>}
+            </div>
           </div>
-          <h3 className="text-2xl font-bold mb-2">Building Distributed Multi-Agent Systems with Google's AI Stack</h3>
-          <p className="text-text-secondary mb-4">
-            A comprehensive series on building production-ready distributed multi-agent architectures using Google Cloud's AI infrastructure, A2A protocol, and modern orchestration patterns.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {['Multi-Agent', 'Google Cloud', 'A2A Protocol', 'Distributed Systems', 'Orchestration'].map(tag => (
-              <span key={tag} className="px-3 py-1 bg-accent-magenta/10 rounded-full text-xs text-accent-magenta font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {distributedMasSeries.slice().reverse().map((article, i) => {
-              const isPublished = article.date !== 'Coming Soon';
-              return isPublished ? (
-                <a
-                  key={article.id}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-magenta hover:text-dark-primary transition-all duration-200"
-                  title={article.title}
-                >
-                  {i + 1}
-                </a>
-              ) : (
-                <div
-                  key={article.id}
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
-                  title={`${article.title} (Coming Soon)`}
-                >
-                  {i + 1}
+          <ChevronDown size={20} className={`flex-shrink-0 text-text-secondary transition-transform duration-300 ${openSeries === 'distributed' ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence initial={false}>
+          {openSeries === 'distributed' && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+              <div className="px-6 pb-6 border-t border-white/10 pt-4 relative">
+                <p className="text-text-secondary mb-4">A comprehensive series on building production-ready distributed multi-agent architectures using Google Cloud's AI infrastructure, A2A protocol, and modern orchestration patterns.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Multi-Agent', 'Google Cloud', 'A2A Protocol', 'Distributed Systems', 'Orchestration'].map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-accent-magenta/10 rounded-full text-xs text-accent-magenta font-medium">{tag}</span>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+                <div className="flex flex-wrap gap-2">
+                  {distributedMasSeries.slice().reverse().map((article, i) => {
+                    const isPublished = article.date !== 'Coming Soon';
+                    return isPublished ? (
+                      <a key={article.id} href={article.url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-magenta hover:text-dark-primary transition-all duration-200" title={article.title}>{i + 1}</a>
+                    ) : (
+                      <div key={article.id} className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed" title={`${article.title} (Coming Soon)`}>{i + 1}</div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
-      {/* Featured Series Banner - Google ADK */}
+      {/* Google ADK Series */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.1 }}
-        className="mb-6 p-6 glass rounded-2xl border border-accent-cyan/30 relative overflow-hidden"
+        className="mb-6 glass rounded-2xl border border-accent-cyan/30 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="text-accent-cyan" size={20} />
-            <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide">Featured Series • 9 Parts</span>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <button className="relative w-full flex items-center justify-between gap-4 p-6 text-left" onClick={() => setOpenSeries(openSeries === 'adk' ? null : 'adk')}>
+          <div className="flex items-center gap-3 min-w-0">
+            <Sparkles className="text-accent-cyan flex-shrink-0" size={20} />
+            <div className="min-w-0">
+              <span className="text-accent-cyan font-semibold text-sm uppercase tracking-wide block mb-0.5">9-Part Series</span>
+              <h3 className="text-lg font-bold leading-snug mb-1">Google ADK: From Local Development to Vertex AI Deployment</h3>
+              {openSeries !== 'adk' && <p className="text-text-secondary text-xs line-clamp-1">Everything from ADK fundamentals to production deployment of AI agents on Vertex AI.</p>}
+            </div>
           </div>
-          <h3 className="text-2xl font-bold mb-2">Google ADK: From Local Development to Vertex AI Deployment</h3>
-          <p className="text-text-secondary mb-4">
-            A comprehensive guide covering everything from fundamentals to production deployment of AI agents using Google Agent Development Kit.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {['Google ADK', 'Vertex AI', 'Agentic AI', 'Production', 'Multi-Agent'].map(tag => (
-              <span key={tag} className="px-3 py-1 bg-accent-cyan/10 rounded-full text-xs text-accent-cyan font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {adkSeries.slice(0, 9).reverse().map((article, i) => (
-              <a
-                key={article.id}
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-cyan hover:text-dark-primary transition-all duration-200"
-                title={article.title}
-              >
-                {i + 1}
-              </a>
-            ))}
-          </div>
-        </div>
+          <ChevronDown size={20} className={`flex-shrink-0 text-text-secondary transition-transform duration-300 ${openSeries === 'adk' ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence initial={false}>
+          {openSeries === 'adk' && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+              <div className="px-6 pb-6 border-t border-white/10 pt-4 relative">
+                <p className="text-text-secondary mb-4">A comprehensive guide covering everything from fundamentals to production deployment of AI agents using Google Agent Development Kit.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Google ADK', 'Vertex AI', 'Agentic AI', 'Production', 'Multi-Agent'].map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-accent-cyan/10 rounded-full text-xs text-accent-cyan font-medium">{tag}</span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {adkSeries.slice(0, 9).reverse().map((article, i) => (
+                    <a key={article.id} href={article.url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-cyan hover:text-dark-primary transition-all duration-200" title={article.title}>{i + 1}</a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
-      {/* Upcoming/Featured Series Banner - MLOps */}
+      {/* MLOps Series */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2 }}
-        className="mb-10 p-6 glass rounded-2xl border border-accent-violet/30 relative overflow-hidden"
+        className="mb-10 glass rounded-2xl border border-accent-violet/30 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-violet/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-3">
-            {mlOpsSeries.filter(a => a.date !== 'Coming Soon').length > 0 ? (
-              <Sparkles className="text-accent-violet" size={20} />
-            ) : (
-              <span className="px-2 py-1 bg-accent-violet/20 rounded text-accent-violet text-xs font-bold uppercase">Coming Soon</span>
-            )}
-            <span className="text-accent-violet font-semibold text-sm uppercase tracking-wide">
-              New Series • {mlOpsSeries.filter(a => a.date !== 'Coming Soon').length > 0 ? `${mlOpsSeries.filter(a => a.date !== 'Coming Soon').length} of ${mlOpsSeries.length} Parts Published` : '8 Parts'}
-            </span>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-violet/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <button className="relative w-full flex items-center justify-between gap-4 p-6 text-left" onClick={() => setOpenSeries(openSeries === 'mlops' ? null : 'mlops')}>
+          <div className="flex items-center gap-3 min-w-0">
+            <Sparkles className="text-accent-violet flex-shrink-0" size={20} />
+            <div className="min-w-0">
+              <span className="text-accent-violet font-semibold text-sm uppercase tracking-wide block mb-0.5">{mlOpsSeries.length}-Part Series</span>
+              <h3 className="text-lg font-bold leading-snug mb-1">Production-Ready MLOps on GCP</h3>
+              {openSeries !== 'mlops' && <p className="text-text-secondary text-xs line-clamp-1">Terraform IaC, Kubeflow pipelines, CI/CD, model monitoring, and developer experience for production ML systems.</p>}
+            </div>
           </div>
-          <h3 className="text-2xl font-bold mb-2">Production-Ready MLOps on GCP</h3>
-          <p className="text-text-secondary mb-4">
-            A deep-dive series on building production ML systems: Terraform IaC, Kubeflow pipelines, CI/CD, model monitoring, and developer experience.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {['MLOps', 'Terraform', 'Kubeflow', 'CI/CD', 'Vertex AI', 'Monitoring'].map(tag => (
-              <span key={tag} className="px-3 py-1 bg-accent-violet/10 rounded-full text-xs text-accent-violet font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {mlOpsSeries.map((article, i) => {
-              const isPublished = article.date !== 'Coming Soon';
-              return isPublished ? (
-                <a
-                  key={article.id}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-violet hover:text-dark-primary transition-all duration-200"
-                  title={article.title}
-                >
-                  {i + 1}
-                </a>
-              ) : (
-                <div
-                  key={article.id}
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed"
-                  title={`${article.title} (Coming Soon)`}
-                >
-                  {i + 1}
+          <ChevronDown size={20} className={`flex-shrink-0 text-text-secondary transition-transform duration-300 ${openSeries === 'mlops' ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence initial={false}>
+          {openSeries === 'mlops' && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+              <div className="px-6 pb-6 border-t border-white/10 pt-4 relative">
+                <p className="text-text-secondary mb-4">A deep-dive series on building production ML systems: Terraform IaC, Kubeflow pipelines, CI/CD, model monitoring, and developer experience.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['MLOps', 'Terraform', 'Kubeflow', 'CI/CD', 'Vertex AI', 'Monitoring'].map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-accent-violet/10 rounded-full text-xs text-accent-violet font-medium">{tag}</span>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+                <div className="flex flex-wrap gap-2">
+                  {mlOpsSeries.map((article, i) => {
+                    const isPublished = article.date !== 'Coming Soon';
+                    return isPublished ? (
+                      <a key={article.id} href={article.url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold hover:bg-accent-violet hover:text-dark-primary transition-all duration-200" title={article.title}>{i + 1}</a>
+                    ) : (
+                      <div key={article.id} className="w-10 h-10 glass rounded-lg flex items-center justify-center text-sm font-bold text-text-muted opacity-50 cursor-not-allowed" title={`${article.title} (Coming Soon)`}>{i + 1}</div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* Other Articles */}
-      <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-        <Newspaper size={20} className="text-accent-green" /> More Articles
-      </h3>
+      <div className="glass rounded-2xl overflow-hidden mb-6">
+        <button
+          className="w-full flex items-center justify-between gap-4 p-6 text-left"
+          onClick={() => setOpenSeries(openSeries === 'more' ? null : 'more')}
+        >
+          <div className="flex items-center gap-3">
+            <Newspaper size={20} className="text-accent-green flex-shrink-0" />
+            <h3 className="text-lg font-bold">More Articles</h3>
+          </div>
+          <ChevronDown size={20} className={`flex-shrink-0 text-text-secondary transition-transform duration-300 ${openSeries === 'more' ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence initial={false}>
+          {openSeries === 'more' && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+              <div className="px-6 pb-6 border-t border-white/10 pt-4">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayedOthers.map((article, index) => (
           <motion.article
@@ -427,6 +400,11 @@ function ArticlesTab({ isInView }: { isInView: boolean }) {
           </button>
         </div>
       )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* View All Button */}
       <div className="text-center mt-10">

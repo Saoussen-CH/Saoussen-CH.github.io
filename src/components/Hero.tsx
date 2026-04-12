@@ -127,7 +127,7 @@ export function Hero() {
             <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-accent-violet/30 to-accent-cyan/20 blur-xl" />
             {/* Photo */}
             <img
-              src="/profile-photo.png"
+              src="/profile-photo-opt.png"
               alt={`${profile.name} - ${profile.title}`}
               loading="eager"
               fetchPriority="high"

@@ -9,7 +9,7 @@ export function Education() {
 
   return (
     <section id="education" className="py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -20,20 +20,23 @@ export function Education() {
           <h2 className="section-title">Academic Background</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="relative pl-8 border-l-2 border-white/10 space-y-10">
           {education.map((edu, index) => (
             <motion.div
               key={edu.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="glass rounded-xl p-5 glass-hover"
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative"
             >
+              {/* Timeline dot */}
+              <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-dark-primary border-[3px] border-accent-cyan" />
+
               <div className="font-mono text-accent-cyan text-sm mb-2">
                 {edu.years}
               </div>
-              <h4 className="font-semibold mb-1">{edu.degree}</h4>
-              <p className="text-text-secondary text-sm">{edu.school}</p>
+              <h4 className="text-xl font-semibold mb-1">{edu.degree}</h4>
+              <p className="text-accent-violet font-medium">{edu.school}</p>
               {edu.rank && (
                 <p className="text-accent-gold text-sm mt-2 font-medium flex items-center gap-1">
                   <Trophy size={14} /> {edu.rank.replace('🏆 ', '')}

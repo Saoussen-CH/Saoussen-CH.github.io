@@ -43,7 +43,7 @@
   }
 
   .section-label {
-    @apply font-mono text-sm text-accent-cyan uppercase tracking-[3px] mb-4;
+    @apply font-mono text-xl text-accent-cyan uppercase tracking-[3px] mb-4;
   }
 
   .section-title {
