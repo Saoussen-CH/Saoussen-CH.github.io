@@ -70,7 +70,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3 }}
-          className="flex justify-center gap-4"
+          className="flex flex-wrap justify-center gap-3"
         >
           {socialLinks.map((link, index) => (
             <motion.a
@@ -81,12 +81,12 @@ export function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 + index * 0.1 }}
-              className="flex items-center gap-3 px-6 py-4 glass rounded-xl glass-hover group"
+              className="flex items-center gap-2 px-4 py-3 glass rounded-xl glass-hover group"
             >
               <span className="text-text-primary group-hover:text-accent-cyan transition-colors">
                 {iconMap[link.icon]}
               </span>
-              <span className="font-medium">{link.name}</span>
+              <span className="font-medium text-sm hidden sm:inline">{link.name}</span>
             </motion.a>
           ))}
         </motion.div>
