@@ -27,132 +27,154 @@ export function Hero() {
   return (
     <section className="min-h-screen flex flex-col relative">
 
-      {/* Main content — fills available space */}
-      <div className="flex-1 flex items-center w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid lg:grid-cols-2 gap-12 pt-20 pb-4">
+      {/* Main content */}
+      <div className="flex-1 flex items-center w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-24 pb-8 lg:pt-20 lg:pb-4">
+        <div className="w-full grid lg:grid-cols-2 gap-12 items-center">
 
-        {/* Left: Content */}
-        <div>
-          {/* Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-row flex-wrap gap-3 mb-6"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full whitespace-nowrap">
-              <span className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse flex-shrink-0" />
-              <span className="text-accent-cyan text-xs">{profile.availability}</span>
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full whitespace-nowrap">
-              <Star size={12} className="text-accent-gold fill-accent-gold flex-shrink-0" />
-              <span className="text-accent-gold text-xs">Google Developer Expert • Cloud AI</span>
-            </div>
-          </motion.div>
+          {/* Left: Content */}
+          <div>
+            {/* Badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-row flex-wrap gap-3 mb-6"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full">
+                <span className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse flex-shrink-0" />
+                <span className="text-accent-cyan text-xs">{profile.availability}</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full">
+                <Star size={12} className="text-accent-gold fill-accent-gold flex-shrink-0" />
+                <span className="text-accent-gold text-xs">Google Developer Expert • Cloud AI</span>
+              </div>
+            </motion.div>
 
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-bold leading-tight mb-6"
-          >
-            <span className="block text-3xl md:text-4xl text-text-primary mb-1">Hi, I'm</span>
-            <span className="block text-4xl md:text-5xl gradient-text">Saoussen Chaabnia</span>
-          </motion.h1>
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-bold leading-tight mb-6"
+            >
+              <span className="block text-3xl md:text-4xl text-text-primary mb-1">Hi, I'm</span>
+              <span className="block text-4xl md:text-5xl gradient-text">Saoussen Chaabnia</span>
+            </motion.h1>
 
-          {/* Title */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base md:text-lg text-accent-cyan font-medium mb-4 whitespace-nowrap"
-          >
-            {profile.title}
-          </motion.p>
+            {/* Title */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-sm md:text-base lg:text-lg text-accent-cyan font-medium mb-4"
+            >
+              {profile.title}
+            </motion.p>
 
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-text-secondary mb-8"
-          >
-            {profile.heroDescription}
-          </motion.p>
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-base md:text-lg text-text-secondary mb-8"
+            >
+              {profile.heroDescription}
+            </motion.p>
 
-          {/* Schedule a Call */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-6"
-          >
-            <a href="https://calendly.com/saoussen-chaabnia-pro/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
-              Schedule a Call
-              <ArrowRight size={16} />
-            </a>
-          </motion.div>
+            {/* Schedule a Call */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-6"
+            >
+              <a href="https://calendly.com/saoussen-chaabnia-pro/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+                Schedule a Call
+                <ArrowRight size={16} />
+              </a>
+            </motion.div>
 
-          {/* Stats bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <div className="grid grid-cols-5 divide-x divide-white/10 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_4px_24px_rgba(0,0,0,0.2)] px-4 py-3">
-              {profile.stats.map((stat) => (
-                <div key={stat.label} className="flex flex-col items-center justify-center text-center px-2 min-w-0">
-                  <div className={`text-base font-bold ${'featured' in stat && stat.featured ? 'text-accent-gold' : 'text-text-primary'}`}>
-                    {stat.value}
+            {/* Stats bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <div className="grid grid-cols-3 md:grid-cols-5 divide-x divide-white/10 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_4px_24px_rgba(0,0,0,0.2)] px-2 py-3">
+                {profile.stats.map((stat, i) => (
+                  <div key={stat.label} className={`flex flex-col items-center justify-center text-center px-2 min-w-0 ${i >= 3 ? 'hidden md:flex' : ''}`}>
+                    <div className={`text-base font-bold ${'featured' in stat && stat.featured ? 'text-accent-gold' : 'text-text-primary'}`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-text-secondary text-[10px] mt-0.5 leading-tight">{stat.label}</div>
                   </div>
-                  <div className="text-text-secondary text-[10px] mt-0.5 leading-tight">{stat.label}</div>
-                </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Social Icons — visible on mobile only */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex items-center gap-3 mt-6 lg:hidden"
+            >
+              {socialLinks.map(link => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                  className="w-10 h-10 glass rounded-xl flex items-center justify-center text-text-secondary hover:text-accent-cyan transition-colors"
+                >
+                  {iconMap[link.icon]}
+                </a>
               ))}
+            </motion.div>
+          </div>
+
+          {/* Right: Profile Photo + Social Icons — desktop only */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="hidden lg:flex flex-col items-end justify-center"
+          >
+            <div className="flex flex-col items-center gap-5">
+              <div className="relative">
+                {/* Glow background */}
+                <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-accent-cyan/50 via-accent-violet/40 to-accent-magenta/30 blur-3xl opacity-80" />
+                <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-accent-violet/30 to-accent-cyan/20 blur-xl" />
+                {/* Photo */}
+                <img
+                  src="/profile-photo-opt.png"
+                  alt={`${profile.name} - ${profile.title}`}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="relative w-80 h-80 object-cover rounded-3xl border border-white/20 shadow-2xl"
+                />
+              </div>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                {socialLinks.map(link => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.name}
+                    className="w-10 h-10 glass rounded-xl flex items-center justify-center text-text-secondary hover:text-accent-cyan transition-colors"
+                  >
+                    {iconMap[link.icon]}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
 
         </div>
-
-        {/* Right: Profile Photo + Social Icons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden lg:flex flex-col items-end justify-center"
-        >
-          <div className="flex flex-col items-center gap-5">
-          <div className="relative">
-            {/* Glow background */}
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-accent-cyan/50 via-accent-violet/40 to-accent-magenta/30 blur-3xl opacity-80" />
-            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-accent-violet/30 to-accent-cyan/20 blur-xl" />
-            {/* Photo */}
-            <img
-              src="/profile-photo-opt.png"
-              alt={`${profile.name} - ${profile.title}`}
-              loading="eager"
-              fetchPriority="high"
-              className="relative w-80 h-80 object-cover rounded-3xl border border-white/20 shadow-2xl"
-            />
-          </div>
-          {/* Social Icons */}
-          <div className="flex items-center gap-3">
-            {socialLinks.map(link => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.name}
-                className="w-10 h-10 glass rounded-xl flex items-center justify-center text-text-secondary hover:text-accent-cyan transition-colors"
-              >
-                {iconMap[link.icon]}
-              </a>
-            ))}
-          </div>
-          </div>
-        </motion.div>
       </div>
-
 
     </section>
   );

@@ -26,7 +26,7 @@ export function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-xl md:text-2xl font-bold mb-6 whitespace-nowrap">
+            <h2 className="text-xl md:text-2xl font-bold mb-6">
               Technology × Business × Impact
             </h2>
             {profile.aboutParagraphs.map((paragraph, index) => (
