@@ -1,129 +1,79 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, Github, Bot, Palette, PenTool, GitBranch, BarChart2, Database } from 'lucide-react';
+import { ArrowUpRight, Star } from 'lucide-react';
 import { projects } from '../data';
-
-const projectIconMap: Record<string, React.ReactNode> = {
-  'adk-multiagent-production-template': <Bot size={24} className="text-accent-cyan" />,
-  'ai-creative-studio': <Palette size={24} className="text-accent-violet" />,
-  'content-creation-mas': <PenTool size={24} className="text-accent-cyan" />,
-  'mlops-gcp': <GitBranch size={24} className="text-accent-gold" />,
-  'sentiment-analysis': <BarChart2 size={24} className="text-accent-magenta" />,
-  'census-prediction': <Database size={24} className="text-accent-cyan" />,
-};
 
 export function Projects() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const featuredProjects = projects.filter(p => p.featured);
-  const otherProjects = projects.filter(p => !p.featured);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-dark-secondary">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="bg-mist py-28 md:py-32 border-t border-line">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-12"
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="grid lg:grid-cols-12 gap-10 mb-14"
         >
-          <p className="section-label">Projects</p>
-          <h2 className="section-title">Featured Projects</h2>
+          <div className="lg:col-span-6">
+            <p className="font-mono text-[26px] md:text-[30px] font-bold uppercase tracking-wider2 text-coral">Projects</p>
+            <h2 className="mt-4 font-display font-black text-[26px] md:text-[32px] lg:text-[38px] leading-[1.05] text-ink">
+              Open Source <span className="accent">Projects</span>
+            </h2>
+          </div>
+          <div className="lg:col-span-6 flex items-end">
+            <p className="text-[16px] leading-relaxed text-ink-2 max-w-[520px]">
+              A selection of repos I build and maintain. Agentic architectures, MLOps platforms, and
+              cloud-native pipelines. Each card links straight to the source on GitHub.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Featured — full-width larger cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          {featuredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-dark-primary border border-accent-cyan/20 rounded-2xl overflow-hidden hover:border-accent-cyan hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,245,255,0.1)]"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((p, i) => (
+            <motion.a
+              key={p.id}
+              href={p.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.08 + i * 0.05 }}
+              className="card p-6 flex flex-col group"
             >
-              {/* Header */}
-              <div className="p-6 bg-gradient-to-br from-dark-tertiary to-dark-secondary">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {projectIconMap[project.id] || <Bot size={24} className="text-accent-cyan" />}
-                  </div>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-accent-gold/15 text-accent-gold border border-accent-gold/30">
-                    Production-Ready
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold leading-snug">{project.title}</h3>
-              </div>
-
-              {/* Body */}
-              <div className="p-6">
-                <p className="text-text-secondary text-sm mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-1 glass rounded text-xs text-accent-cyan font-mono">
-                      {tag}
+              <div className="flex items-start justify-between mb-4">
+                <span className="label">P.{String(i + 1).padStart(2, '0')}</span>
+                <div className="flex items-center gap-1.5">
+                  {p.featured && (
+                    <span
+                      className="chip text-[10px] py-0.5"
+                      style={{
+                        background: 'rgba(245,158,11,0.14)',
+                        color: '#B45309',
+                        borderColor: 'rgba(245,158,11,0.35)',
+                      }}
+                    >
+                      <Star size={10} strokeWidth={2.5} /> Featured
                     </span>
-                  ))}
+                  )}
+                  <ArrowUpRight size={16} strokeWidth={1.75}
+                    className="text-ink-3 group-hover:text-coral group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
                 </div>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-text-primary hover:text-accent-cyan transition-colors group/link"
-                >
-                  <Github size={18} />
-                  View on GitHub
-                  <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Other projects — smaller 3-col grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {otherProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: (featuredProjects.length + index) * 0.1 }}
-              className="group bg-dark-primary border border-white/10 rounded-2xl overflow-hidden hover:border-accent-violet hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_12px_30px_rgba(131,56,236,0.12)]"
-            >
-              {/* Header */}
-              <div className="p-4 bg-gradient-to-br from-dark-tertiary to-dark-secondary">
-                <div className="w-10 h-10 glass rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  {projectIconMap[project.id] || <Bot size={20} className="text-accent-cyan" />}
-                </div>
-                <h3 className="text-sm font-semibold leading-snug">{project.title}</h3>
               </div>
 
-              {/* Body */}
-              <div className="p-4">
-                <p className="text-text-secondary text-xs mb-3 line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="px-1.5 py-0.5 glass rounded text-[10px] text-accent-cyan font-mono">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-text-primary hover:text-accent-violet transition-colors group/link text-xs"
-                >
-                  <Github size={14} />
-                  GitHub
-                  <ArrowRight size={12} className="transition-transform group-hover/link:translate-x-1" />
-                </a>
+              <h3 className="text-[17px] font-bold text-ink leading-snug mb-3 group-hover:text-coral transition-colors">
+                {p.title}
+              </h3>
+              <p className="text-[13.5px] leading-relaxed text-ink-2 flex-1">{p.description}</p>
+
+              <div className="mt-5 pt-4 border-t border-line-soft flex flex-wrap gap-1.5">
+                {p.tags.map(t => (
+                  <span key={t} className="tag">{t}</span>
+                ))}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

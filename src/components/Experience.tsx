@@ -1,108 +1,65 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Briefcase, Award, ShieldCheck, Cloud, Brain, BarChart3, Trophy, ClipboardList } from 'lucide-react';
-import { experiences, certifications } from '../data';
-
-const certIconMap: Record<string, React.ReactNode> = {
-  'gcp-ml': <Brain size={20} className="text-accent-cyan" />,
-  'gcp-architect': <Cloud size={20} className="text-accent-cyan" />,
-  'gcp-data': <BarChart3 size={20} className="text-accent-cyan" />,
-  'tensorflow': <Brain size={20} className="text-accent-violet" />,
-  'pm': <ClipboardList size={20} className="text-accent-cyan" />,
-  'complete-list-100+-certifications': <Trophy size={20} className="text-accent-gold" />,
-};
+import { experiences } from '../data';
 
 export function Experience() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 bg-dark-secondary">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="py-28 md:py-32 border-t border-line">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-12"
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="grid lg:grid-cols-12 gap-10 mb-16"
         >
-          <p className="section-label">Journey</p>
-          <h2 className="section-title">Experience & Certifications</h2>
+          <div className="lg:col-span-6">
+            <p className="font-mono text-[26px] md:text-[30px] font-bold uppercase tracking-wider2 text-coral">Experience</p>
+          </div>
+          <div className="lg:col-span-6 flex items-end">
+            <p className="text-[16px] leading-relaxed text-ink-2 max-w-[520px]">
+              From data-science POCs to cloud-native multi-agent platforms. Always framed around an outcome,
+              always followed through to production.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Experience Timeline */}
-        <div className="mb-16 max-w-3xl mx-auto">
-          <h3 className="text-xl font-semibold mb-8 flex items-center gap-2">
-            <Briefcase size={24} className="text-accent-cyan" /> Work Experience
-          </h3>
-          <div className="relative pl-8 border-l-2 border-white/10 space-y-10">
-            {experiences.map((exp, index) => (
-              <motion.div
+        <div className="max-w-3xl">
+          <div className="relative pl-8 border-l-2 border-line space-y-12">
+            {experiences.map((exp, i) => (
+              <motion.article
                 key={exp.id}
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.55, delay: 0.1 + i * 0.1 }}
                 className="relative"
               >
-                {/* Timeline dot */}
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-dark-primary border-[3px] border-accent-cyan" />
-
-                <div className="font-mono text-accent-cyan text-sm mb-2">
-                  {exp.startDate} — {exp.endDate}
-                </div>
-                <h4 className="text-xl font-semibold mb-1">{exp.title}</h4>
-                <p className="text-accent-violet font-medium mb-3">
-                  {exp.company} • {exp.location}
+                <span className={`absolute -left-[41px] top-1 w-4 h-4 rounded-full border-[3px] ${
+                  i === 0 ? 'bg-coral border-coral' : 'bg-paper border-coral'
+                }`} />
+                <p className="font-mono text-[13px] font-semibold text-coral mb-2">
+                  {exp.startDate} - {exp.endDate}
+                </p>
+                <h3 className="text-[20px] md:text-[22px] font-bold text-ink leading-snug mb-1">
+                  {exp.title}
+                </h3>
+                <p className="text-[14px] font-medium text-violet mb-3">
+                  {exp.company} · {exp.location}
                 </p>
                 <ul className="space-y-2">
-                  {exp.highlights.map((highlight, i) => (
+                  {exp.highlights.map((h, hi) => (
                     <li
-                      key={i}
-                      className="text-text-secondary text-sm pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent-cyan"
+                      key={hi}
+                      className="relative pl-5 text-[14px] text-ink-2 leading-relaxed before:content-['→'] before:absolute before:left-0 before:top-[1px] before:text-coral before:font-bold"
                     >
-                      {highlight}
+                      {h}
                     </li>
                   ))}
                 </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div>
-          <h3 className="text-xl font-semibold mb-8 flex items-center gap-2">
-            <Award size={24} className="text-accent-cyan" /> Certifications
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="glass rounded-xl p-5 glass-hover group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 glass rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    {certIconMap[cert.id] || <ShieldCheck size={20} className="text-accent-cyan" />}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">{cert.title}</h4>
-                    <p className="text-accent-cyan text-sm">{cert.provider}</p>
-                    <div className="flex flex-wrap items-center gap-1.5 mt-1">
-                      {cert.date.split(' • ').map((d, i) => (
-                        <span
-                          key={i}
-                          className={`text-xs ${i === 0 && d.startsWith('Re-certified') ? 'text-accent-gold font-semibold' : 'text-text-secondary'}`}
-                        >
-                          {i > 0 && <span className="text-white/20 mr-1.5">•</span>}{d}
-                        </span>
-                      ))}
-                    </div>
-                    <p><a href={cert.url} className="text-accent-violet text-sm hover:underline">View Certificate</a></p>
-                  </div>
-                </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>

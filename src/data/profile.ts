@@ -17,14 +17,15 @@ export const profile = {
   
   // About section - Updated to match LinkedIn
   aboutParagraphs: [
-    `I design and deliver production-grade AI solutions that align technology, business goals, and user impact. 
-     With a background as a Machine Learning & Cloud AI Engineer, I've led end-to-end ML/AI initiatives; from 
-     problem framing and architecture design to development, deployment, monitoring, and iteration.`,
-    `My work spans AI solution architecture, MLOps, and applied Generative AI, with hands-on experience in 
-     Vertex AI, cloud-native pipelines, and LLM-based systems. I've collaborated with product owners, engineering 
+    `I design and deliver production-grade AI solutions that align technology, business goals, and user impact.`,
+    `That tech-business-impact mindset shapes everything I build. With a background as a Machine Learning & Cloud AI
+     Engineer, I've led end-to-end ML/AI initiatives: from problem framing and architecture design to development,
+     deployment, monitoring, and iteration.`,
+    `My work spans AI solution architecture, MLOps, and applied Generative AI, with hands-on experience in
+     Vertex AI, cloud-native pipelines, and LLM-based systems. I've collaborated with product owners, engineering
      teams, and leadership to translate business needs into scalable AI products.`,
-    `Today, my focus is on Agentic AI, AI Solution Architecture, and AI Product Management, helping teams make 
-     the right technical and product decisions, balance feasibility and impact, and bring AI products responsibly 
+    `Today, my focus is on Agentic AI, AI Solution Architecture, and AI Product Management, helping teams make
+     the right technical and product decisions, balance feasibility and impact, and bring AI products responsibly
      to market.`,
   ],
 

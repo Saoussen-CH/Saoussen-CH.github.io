@@ -1,39 +1,25 @@
 import {
-  Background,
-  Navbar,
-  Hero,
-  About,
-  //Skills,
-  Projects,
-  Writing,
-  Experience,
-  Talks,
-  Education,
-  Contact,
-  Footer,
-  BackToTop,
+  Navbar, Hero, About, Skills, Experience,
+  Education, Projects, Certifications, Talks, Writing, Contact, Footer,
 } from './components';
 
-function App() {
+export default function App() {
   return (
     <div className="relative">
-      <Background />
       <Navbar />
-      <main className="relative z-10">
+      <main>
         <Hero />
         <About />
-        <Experience />
-        <Education />
         {/* <Skills /> */}
+        <Experience />
         <Projects />
-        <Writing />
+        <Certifications />
+        <Education />
         <Talks />
+        <Writing />
         <Contact />
       </main>
       <Footer />
-      <BackToTop />
     </div>
   );
 }
-
-export default App;
