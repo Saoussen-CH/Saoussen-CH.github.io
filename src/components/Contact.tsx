@@ -90,8 +90,7 @@ export function Contact() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line text-ink hover:border-coral/40 hover:-translate-y-0.5 transition-all shadow-sm"
-              style={{ background: '#EFF6FF' }}
+              className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-paper border border-line text-ink hover:border-coral/40 hover:-translate-y-0.5 transition-all shadow-sm"
             >
               <span className="text-coral transition-colors">
                 {iconMap[s.icon]}
