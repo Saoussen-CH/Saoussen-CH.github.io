@@ -1,5 +1,5 @@
 import {
-  Navbar, Hero, About, Skills, Experience,
+  Navbar, Hero, About, Experience,
   Education, Projects, Certifications, Talks, Writing, Contact, Footer,
 } from './components';
 
@@ -10,7 +10,6 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        {/* <Skills /> */}
         <Experience />
         <Projects />
         <Certifications />
