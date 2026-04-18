@@ -22,7 +22,7 @@ const PILLARS = [
   {
     icon: PenLine,
     title: 'Technical Thought Leader',
-    desc: '42+ articles on Medium & Google Cloud publication.',
+    desc: '30+ articles on Medium & Google Cloud publication.',
   },
 ];
 

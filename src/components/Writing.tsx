@@ -1,7 +1,9 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ArrowRight, ExternalLink, PenLine, BookOpen, Mic, ChevronDown } from 'lucide-react';
-import { articles, publications } from '../data';
+import { articles as allArticles, publications } from '../data';
+
+const articles = allArticles.filter(a => a.url !== '#');
 
 type Tab = 'articles' | 'publications';
 
@@ -78,13 +80,20 @@ type SeriesKey = 'agentops' | 'evals' | 'distributed' | 'adk' | 'mlops' | 'more'
 
 function ArticlesTab({ inView }: { inView: boolean }) {
   const [showAll, setShowAll] = useState(false);
-  const [openSeries, setOpenSeries] = useState<SeriesKey>('agentops');
 
   const agentOpsSeries = articles.filter(a => a.id.startsWith('agentops-'));
   const evalsSeries = articles.filter(a => a.id.startsWith('evals-'));
   const distributedMasSeries = articles.filter(a => a.id.startsWith('distributed-mas'));
   const adkSeries = articles.filter(a => a.id.startsWith('google-adk'));
   const mlOpsSeries = articles.filter(a => a.id.startsWith('mlops-'));
+
+  const firstOpen: SeriesKey =
+    agentOpsSeries.length > 0 ? 'agentops' :
+    evalsSeries.length > 0 ? 'evals' :
+    distributedMasSeries.length > 0 ? 'distributed' :
+    adkSeries.length > 0 ? 'adk' :
+    mlOpsSeries.length > 0 ? 'mlops' : null;
+  const [openSeries, setOpenSeries] = useState<SeriesKey>(firstOpen);
 
   const otherArticles = articles.filter(a =>
     !a.id.startsWith('agentops-') &&
@@ -172,7 +181,7 @@ function ArticlesTab({ inView }: { inView: boolean }) {
       transition={{ duration: 0.3 }}
       className="flex flex-col gap-4"
     >
-      {seriesList.map((s, i) => {
+      {seriesList.filter(s => s.articles.length > 0).map((s, i) => {
         const isOpen = openSeries === s.key;
         const list = s.cap ? s.articles.slice(0, s.cap) : s.articles;
         const ordered = s.reverse ? list.slice().reverse() : list;
