@@ -42,8 +42,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        scrolled ? 'bg-paper/85 backdrop-blur border-b border-line' : 'bg-transparent'
+      className={`fixed top-0 inset-x-0 z-50 transition-all bg-paper/85 backdrop-blur border-b border-line lg:border-b-0 lg:bg-transparent ${
+        scrolled ? 'lg:bg-paper/85 lg:backdrop-blur lg:border-b lg:border-line' : ''
       }`}
     >
       <div className="max-w-[1320px] mx-auto px-6 md:px-10 h-[68px] flex items-center justify-between">
