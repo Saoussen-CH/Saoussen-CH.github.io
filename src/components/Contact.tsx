@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, Calendar, Linkedin, Github } from 'lucide-react';
+import { ArrowRight, Calendar, Linkedin, Github, Mail } from 'lucide-react';
 import { socialLinks } from '../data';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -56,7 +56,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-12 max-w-[380px] mx-auto"
+          className="mt-12 grid sm:grid-cols-2 gap-5 max-w-[780px] mx-auto"
         >
           <a
             href="https://calendly.com/saoussen-chaabnia-pro/"
@@ -73,6 +73,23 @@ export function Contact() {
               <p className="mt-2 text-[13px] text-paper/70">30 minutes · Calendly</p>
               <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold" style={{ color: '#F59E0B' }}>
                 Schedule <ArrowRight size={14} strokeWidth={2.2} className="transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="mailto:consulting@saoussen-chaabnia-ai.com"
+            className="group relative block rounded-2.5xl bg-paper border border-line p-8 md:p-10 overflow-hidden text-center shadow-sm hover:border-coral/40 transition-colors"
+          >
+            <div className="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-coral/15 blur-3xl transition-transform group-hover:scale-125" />
+            <div className="relative flex flex-col items-center">
+              <span className="w-11 h-11 rounded-lg bg-coral/10 text-coral grid place-items-center mb-5">
+                <Mail size={19} strokeWidth={1.8} />
+              </span>
+              <h3 className="text-[24px] md:text-[26px] font-bold leading-tight text-ink">Send an email</h3>
+              <p className="mt-2 text-[13px] text-ink-3 break-all">consulting@saoussen-chaabnia-ai.com</p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-coral">
+                Write <ArrowRight size={14} strokeWidth={2.2} className="transition-transform group-hover:translate-x-1" />
               </span>
             </div>
           </a>

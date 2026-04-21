@@ -1,6 +1,6 @@
 import {
   Navbar, Hero, About, Experience,
-  Education, Projects, Certifications, Talks, Writing, Contact, Footer,
+  Education, Projects, Certifications, Talks, Writing, Contact, Footer, BackToTop,
 } from './components';
 
 export default function App() {
@@ -19,6 +19,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

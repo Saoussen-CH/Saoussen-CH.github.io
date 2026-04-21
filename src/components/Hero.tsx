@@ -93,12 +93,12 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="flex flex-wrap gap-2 mb-5"
             >
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-paper/90 backdrop-blur border border-line px-3 py-1.5 text-[12px] font-semibold text-ink-2 shadow-sm">
-                <Sparkles size={12} style={{ color: '#F59E0B' }} strokeWidth={2.2} />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-paper/90 backdrop-blur border border-line px-3 py-1.5 text-[13px] font-bold text-ink shadow-sm">
+                <Sparkles size={13} style={{ color: '#F59E0B' }} strokeWidth={2.2} />
                 Google Developer Expert · Cloud AI
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-paper/90 backdrop-blur border border-line px-3 py-1.5 text-[12px] font-semibold text-ink-2 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-soft" />
+              <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 backdrop-blur border border-line px-3 py-1.5 text-[13px] font-bold text-ink shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft" />
                 {profile.availability}
               </span>
             </motion.div>

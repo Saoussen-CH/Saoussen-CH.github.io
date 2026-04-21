@@ -11,3 +11,4 @@ export { Talks } from './Talks';
 export { Writing } from './Writing';
 export { Contact } from './Contact';
 export { Footer } from './Footer';
+export { BackToTop } from './BackToTop';
