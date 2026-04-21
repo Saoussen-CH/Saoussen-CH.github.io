@@ -42,8 +42,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all bg-paper/85 backdrop-blur border-b border-line lg:border-b-0 lg:bg-transparent ${
-        scrolled ? 'lg:bg-paper/85 lg:backdrop-blur lg:border-b lg:border-line' : ''
+      className={`fixed top-0 inset-x-0 z-50 transition-all ${
+        scrolled ? 'bg-paper/85 backdrop-blur border-b border-line' : 'bg-transparent'
       }`}
     >
       <div className="max-w-[1320px] mx-auto px-6 md:px-10 h-[68px] flex items-center justify-between">
@@ -81,13 +81,22 @@ export function Navbar() {
           </a>
           <button
             onClick={() => setOpen(v => !v)}
-            aria-label="Menu"
-            className="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-line bg-paper"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            className="lg:hidden w-11 h-11 grid place-items-center rounded-full border border-line bg-paper shadow-sm hover:bg-mist transition-colors"
           >
-            <span className="flex flex-col gap-1">
-              <span className="w-4 h-0.5 bg-ink" />
-              <span className="w-4 h-0.5 bg-ink" />
-            </span>
+            {open ? (
+              <span className="relative w-5 h-5">
+                <span className="absolute inset-x-0 top-1/2 h-0.5 bg-ink rotate-45" />
+                <span className="absolute inset-x-0 top-1/2 h-0.5 bg-ink -rotate-45" />
+              </span>
+            ) : (
+              <span className="flex flex-col gap-[5px]">
+                <span className="w-5 h-0.5 bg-ink rounded-full" />
+                <span className="w-5 h-0.5 bg-ink rounded-full" />
+                <span className="w-5 h-0.5 bg-ink rounded-full" />
+              </span>
+            )}
           </button>
         </div>
       </div>
