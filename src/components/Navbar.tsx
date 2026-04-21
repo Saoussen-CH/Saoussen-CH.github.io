@@ -81,22 +81,13 @@ export function Navbar() {
           </a>
           <button
             onClick={() => setOpen(v => !v)}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
-            className="lg:hidden w-11 h-11 grid place-items-center rounded-full border border-line bg-paper shadow-sm hover:bg-mist transition-colors"
+            aria-label="Menu"
+            className="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-line bg-paper"
           >
-            {open ? (
-              <span className="relative w-5 h-5">
-                <span className="absolute inset-x-0 top-1/2 h-0.5 bg-ink rotate-45" />
-                <span className="absolute inset-x-0 top-1/2 h-0.5 bg-ink -rotate-45" />
-              </span>
-            ) : (
-              <span className="flex flex-col gap-[5px]">
-                <span className="w-5 h-0.5 bg-ink rounded-full" />
-                <span className="w-5 h-0.5 bg-ink rounded-full" />
-                <span className="w-5 h-0.5 bg-ink rounded-full" />
-              </span>
-            )}
+            <span className="flex flex-col gap-1">
+              <span className="w-4 h-0.5 bg-ink" />
+              <span className="w-4 h-0.5 bg-ink" />
+            </span>
           </button>
         </div>
       </div>

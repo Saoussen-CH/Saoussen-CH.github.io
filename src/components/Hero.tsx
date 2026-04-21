@@ -46,7 +46,7 @@ function Portrait() {
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen lg:h-screen lg:min-h-[640px] flex flex-col lg:overflow-hidden">
+    <section id="home" className="relative min-h-screen lg:h-screen lg:min-h-[640px] flex flex-col overflow-x-hidden lg:overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
