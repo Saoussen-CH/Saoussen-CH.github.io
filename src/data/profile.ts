@@ -35,7 +35,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '30', label: 'Articles' },
-    { value: '9+', label: 'Talks & Workshops' },
+    { value: '11+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -227,8 +227,8 @@ export const talks: Talk[] = [
     id: 'workshop-multi-agent-adk',
     emoji: '🛠️',
     type: 'Workshop',
-    title: 'Building & Deploying Multi-Agent Systems with Google ADK & Vertex AI',
-    description: 'Hands-on workshop on building full-stack Multi-Agent Systems using Google ADK & Vertex AI.',
+    title: 'Build a Full-Stack Multi-Agent App with Google ADK & Gemini Enterprise Agent Platform',
+    description: 'Hands-on workshop on building full-stack Multi-Agent Systems using Google ADK & the Gemini Enterprise Agent Platform.',
     highlights: [
       'First Agent: Creating your first AI agent with Google ADK',
       'Custom Tools: Building specialized tools to extend agent capabilities',
@@ -239,10 +239,16 @@ export const talks: Talk[] = [
       'Parallel Workflows: Using ParallelAgent for independent sub-tasks',
       'Callbacks, Context, Memory, Observability : Sessions/state, artifacts, memory and ADK\'s LoggingPlugin',
       'Capstone Project: Building the complete Content Creation Studio',
-      'Deployment: Moving agents to Vertex AI Agent Engine',
+      'Deployment: Moving agents to Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine)',
       'Full-Stack Cloud Run: Deploying the complete React + FastAPI stack to Cloud Run',
     ],
     sessions: [
+      {
+        event: 'AI DevCamp · Build with AI',
+        date: 'May 2, 2026',
+        location: 'London, UK',
+        upcoming: true,
+      },
       {
         event: 'Build with AI: Masr Edition',
         date: 'May 2026',
@@ -292,29 +298,36 @@ export const talks: Talk[] = [
     id: 'workshop-distributed-multi-agent-stack',
     emoji: '🚀',
     type: 'Workshop',
-    title: 'Building Distributed Multi-Agent Systems with Google AI Stack: ADK, MCP, A2A, Vertex AI Agent Engine',
-    description: 'A technical deep dive into designing autonomous, decentralized agent ecosystems using the Google AI stack. The next frontier in AI isn\'t just bigger models — it\'s distributed, collaborating agents. This code-first session examines how specialized, distributed agents collaborate to solve complex problems, covering Google ADK, A2A Protocol for agent-to-agent communication, and MCP for secure tool integration. The session showcases a distributed architecture where an orchestrator on Vertex AI Agent Engine coordinates five specialist agents on Cloud Run to generate a complete, multi-stage marketing campaign with project management tasks synced to Notion — all from a single prompt.',
+    title: 'Building Distributed Multi-Agent Systems with Google AI Stack: ADK, MCP, A2A, Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine)',
+    description: 'A technical deep dive into designing autonomous, decentralized agent ecosystems using the Google AI stack. The next frontier in AI isn\'t just bigger models — it\'s distributed, collaborating agents. This code-first session examines how specialized, distributed agents collaborate to solve complex problems, covering Google ADK, A2A Protocol for agent-to-agent communication, and MCP for secure tool integration. The session showcases a distributed architecture where an orchestrator on Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) coordinates five specialist agents on Cloud Run to generate a complete, multi-stage marketing campaign with project management tasks synced to Notion — all from a single prompt.',
     highlights: [
       'Practical guidance on agent architecture patterns, orchestration, tooling, and scaling agentic systems on Google Cloud',
       'Code-first introduction to Google ADK for agent building',
       'A2A Protocol for agent-to-agent communication',
       'Model Context Protocol (MCP) for secure tool integration',
-      'Hands-on experience deploying agentic workloads to Vertex AI Agent Engine and Cloud Run',
+      'Hands-on experience deploying agentic workloads to Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) and Cloud Run',
       'Intuition to avoid the most common pitfalls in distributed agent system design',
     ],
-    sessions: [],
+    sessions: [
+      {
+        event: 'TechFest 1.0 · Build with AI',
+        date: 'May 3, 2026',
+        location: 'Monastir, Tunisia',
+        upcoming: true,
+      },
+    ],
   },
   {
     id: 'talk-distributed-multi-agent',
     emoji: '🎤',
     type: 'Talk',
     title: 'Designing & Deploying Distributed Multi-Agent Systems with Google\'s AI Stack',
-    description: 'A technical talk and live demonstration on designing and deploying distributed multi-agent systems using Google\'s AI stack. Demonstrated a live system where one orchestrator on Vertex AI Agent Engine coordinates 5 specialist agents on Cloud Run to generate complete social media campaigns from a single prompt — showing how agents collaborate, delegate tasks, and scale beyond monolithic LLM applications.',
+    description: 'A technical talk and live demonstration on designing and deploying distributed multi-agent systems using Google\'s AI stack. Demonstrated a live system where one orchestrator on Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) coordinates 5 specialist agents on Cloud Run to generate complete social media campaigns from a single prompt — showing how agents collaborate, delegate tasks, and scale beyond monolithic LLM applications.',
     highlights: [
       'Practical introduction to Google ADK with Gemini 2.5 Flash',
       'Agent-to-Agent (A2A) Protocol for distributed agent communication',
       'Model Context Protocol (MCP) for integrating external tools like Notion',
-      'Deployment strategies for Vertex AI Agent Engine and Cloud Run',
+      'Deployment strategies for Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) and Cloud Run',
       'Architecture patterns, tooling, and production considerations on Google Cloud',
     ],
     sessions: [
