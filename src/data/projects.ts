@@ -35,8 +35,8 @@ export const projects: Project[] = [
     id: 'ai-creative-studio',
     emoji: '🎨',
     title: 'AI Creative Studio',
-    description: 'Distributed multi-agent orchestration using the A2A protocol, Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine), Cloud Run, and Model Context Protocol (MCP) demonstrating agent-to-agent communication with remote specialist agents for end-to-end social media campaign generation, including automated task management via Notion.',
-    tags: ['A2A Protocol', 'MCP', 'Vertex AI', 'Cloud Run', 'Gemini 2.5'],
+    description: 'Distributed multimodal multi-agent system built with Google ADK, A2A protocol, Model Context Protocol (MCP), Cloud Run, and Gemini Enterprise Agent Platform Runtime. Specialist agents - Copywriter, Designer, Critic, and Project Manager - each advertise their capabilities as A2A skills, enabling the Creative Director to dynamically discover and orchestrate them to transform a single prompt into a complete social media campaign: researched captions, AI-generated visuals, quality-reviewed copy, and an automated project timeline synced to Notion.',
+    tags: ['Google ADK', 'ADK Skills', 'A2A Protocol', 'MCP', 'Multimodal', 'Cloud Run', 'Gemini Enterprise Agent Platform Runtime'],
     githubUrl: 'https://github.com/Saoussen-CH/ai-creative-studio-adk-a2a-mcp-vertexai-cloudrun',
   },
   {
