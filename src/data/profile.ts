@@ -247,6 +247,7 @@ export const talks: Talk[] = [
         event: 'AI DevCamp · Build with AI',
         date: 'May 2026',
         location: 'London, UK',
+        eventUrl: 'https://www.linkedin.com/posts/aidevcamp-gdglondon-googleadk-ugcPost-7455880299827060736-nofS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACyn6mwBjRC3IaJeItlnRqhYpqi5EhPCmbU',
       },
       {
         event: 'Build with AI: Masr Edition',
@@ -259,6 +260,7 @@ export const talks: Talk[] = [
         event: 'Artificial Intelligence National Summit INSAT',
         date: 'April 2026',
         location: 'Tunis, Tunisia',
+        eventUrl: 'https://www.linkedin.com/posts/ains4-ieeeabrcomputerabrsocietyabrinsatabrsbc-share-7454259067952304129-gyCb?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyn6mwBjRC3IaJeItlnRqhYpqi5EhPCmbU',
       },
       {
         event: 'Build with AI 2026 x IWD',
@@ -314,8 +316,9 @@ export const talks: Talk[] = [
     sessions: [
       {
         event: 'TechFest 1.0 · Build with AI',
-        date: 'May 3, 2026',
+        date: 'May 2026',
         location: 'Monastir, Tunisia',
+        eventUrl: 'https://gdg.community.dev/events/details/google-gdg-monastir-presents-techfest-10-buildwithai-workshop-saoussen-chaabnia/',
       },
     ],
   },
