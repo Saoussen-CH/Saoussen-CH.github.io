@@ -254,7 +254,7 @@ export const talks: Talk[] = [
         date: 'May 2026',
         location: 'Egypt',
         upcoming: true,
-        eventUrl: 'https://rsvp.withgoogle.com/events/build-with-ai-masr',
+        eventUrl: 'https://www.linkedin.com/posts/gdgdamanhour_we-are-pleased-to-announce-that-as-part-activity-7454913487564103681-vrQv?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyn6mwBjRC3IaJeItlnRqhYpqi5EhPCmbU',
       },
       {
         event: 'Artificial Intelligence National Summit INSAT',
