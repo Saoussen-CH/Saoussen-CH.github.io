@@ -31,10 +31,10 @@ export const profile = {
 
   // Stats
   stats: [
-    { value: 'GDE', label: 'Google Developer Expert', featured: true },
+    { value: 'GDE', label: 'Google Developer Expert', sublabel: '1 of 213 in Cloud AI Worldwide', featured: true },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
-    { value: '30', label: 'Articles' },
+    { value: '31', label: 'Articles' },
     { value: '11+', label: 'Talks & Workshops' },
   ],
 };
@@ -295,6 +295,7 @@ export const talks: Talk[] = [
     ],
   },
   {
+    codelabUrl: 'https://codelabs.developers.google.com/ai-creative-studio-adk-a2a',
     id: 'workshop-distributed-multi-agent-stack',
     emoji: '🚀',
     type: 'Workshop',

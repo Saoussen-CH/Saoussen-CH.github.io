@@ -36,6 +36,7 @@ export interface Project {
   tags: string[];
   githubUrl: string;
   liveUrl?: string;
+  codelabUrl?: string;
   featured?: boolean;
 }
 
@@ -89,6 +90,7 @@ export interface Talk {
   description: string;
   highlights: string[];
   sessions: TalkSession[];
+  codelabUrl?: string;
 }
 
 export interface SocialLink {

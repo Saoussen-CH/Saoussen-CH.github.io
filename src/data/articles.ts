@@ -303,6 +303,18 @@ export const articles: Article[] = [
     url: 'https://medium.com/@saoussen.chaabnia/google-adk-from-local-development-to-vertex-ai-deployment-part-1-0c615756dcf8',
   },
 
+  // ========== STANDALONE ==========
+  {
+    id: 'ai-creative-studio-article',
+    emoji: '🎨',
+    category: 'Agentic AI',
+    date: 'May 2026',
+    title: 'Build a Multi-Agent Creative Studio with Google\'s Agent Stack: ADK, A2A, MCP on Cloud Run & Agent Runtime',
+    excerpt: 'Six specialized agents — Brand Strategist, Copywriter, Designer, Critic, Project Manager, and Creative Director — each deployed as an independent Cloud Run service, collaborate to produce a complete Instagram campaign from a single prompt. Covers ADK Skills for lean prompts, multimodal image generation and visual review across agent boundaries, Pydantic structured output as agent contracts, MCP for Notion integration without custom glue code, A2A protocol for agent-to-agent communication, and context compaction for long multi-agent workflows.',
+    tags: ['Google ADK', 'ADK Skills', 'A2A Protocol', 'MCP', 'Cloud Run', 'Gemini', 'Multimodal', 'Pydantic'],
+    url: 'https://medium.com/google-cloud/build-a-multi-agent-creative-studio-with-googles-agent-stack-adk-a2a-mcp-on-cloud-run-agent-cdc916e5323f',
+  },
+
   // ========== GCP CERTIFICATION GUIDES ==========
   {
     id: 'gcp-architect-exam',

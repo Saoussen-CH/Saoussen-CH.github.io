@@ -38,6 +38,7 @@ export const projects: Project[] = [
     description: 'Distributed multimodal multi-agent system built with Google ADK, A2A protocol, Model Context Protocol (MCP), Cloud Run, and Gemini Enterprise Agent Platform Runtime. Specialist agents - Copywriter, Designer, Critic, and Project Manager - each advertise their capabilities as A2A skills, enabling the Creative Director to dynamically discover and orchestrate them to transform a single prompt into a complete social media campaign: researched captions, AI-generated visuals, quality-reviewed copy, and an automated project timeline synced to Notion.',
     tags: ['Google ADK', 'ADK Skills', 'A2A Protocol', 'MCP', 'Multimodal', 'Cloud Run', 'Gemini Enterprise Agent Platform Runtime'],
     githubUrl: 'https://github.com/Saoussen-CH/ai-creative-studio-adk-a2a-mcp-vertexai-cloudrun',
+    codelabUrl: 'https://codelabs.developers.google.com/ai-creative-studio-adk-a2a',
   },
   {
     id: 'content-creation-mas',

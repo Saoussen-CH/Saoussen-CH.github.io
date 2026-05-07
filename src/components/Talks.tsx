@@ -121,6 +121,17 @@ export function Talks() {
                         <p className="text-[14px] leading-relaxed text-ink-2 mb-4">
                           {talk.description}
                         </p>
+                        {talk.codelabUrl && (
+                          <a
+                            href={talk.codelabUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full text-[12px] font-semibold border"
+                            style={{ background: 'rgba(66,133,244,0.10)', color: '#1a56c4', borderColor: 'rgba(66,133,244,0.30)' }}
+                          >
+                            Google Codelab Author - Try it hands-on
+                          </a>
+                        )}
 
                         {talk.highlights.length > 0 && (
                           <ul className="grid gap-1.5 mb-5">

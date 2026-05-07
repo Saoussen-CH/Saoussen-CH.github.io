@@ -46,6 +46,18 @@ export function Projects() {
               <div className="flex items-start justify-between mb-4">
                 <span className="label">P.{String(i + 1).padStart(2, '0')}</span>
                 <div className="flex items-center gap-1.5">
+                  {p.codelabUrl && (
+                    <span
+                      className="chip text-[10px] py-0.5"
+                      style={{
+                        background: 'rgba(66,133,244,0.12)',
+                        color: '#1a56c4',
+                        borderColor: 'rgba(66,133,244,0.35)',
+                      }}
+                    >
+                      Google Codelab Author
+                    </span>
+                  )}
                   {p.featured && (
                     <span
                       className="chip text-[10px] py-0.5"
@@ -73,6 +85,18 @@ export function Projects() {
                   <span key={t} className="tag">{t}</span>
                 ))}
               </div>
+              {p.codelabUrl && (
+                <a
+                  href={p.codelabUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                  className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#1a56c4] hover:underline"
+                >
+                  <ArrowUpRight size={13} strokeWidth={2} />
+                  Try the hands-on Codelab
+                </a>
+              )}
             </motion.a>
           ))}
         </div>

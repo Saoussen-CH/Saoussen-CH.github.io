@@ -197,6 +197,11 @@ export function Hero() {
               <div className="mt-2 text-[12px] md:text-[13px] font-medium text-ink-3">
                 {s.label}
               </div>
+              {'sublabel' in s && s.sublabel && (
+                <div className="mt-0.5 text-[10px] md:text-[11px] font-medium text-ink-4">
+                  {s.sublabel}
+                </div>
+              )}
             </div>
           ))}
         </div>
