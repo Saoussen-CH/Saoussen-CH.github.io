@@ -253,7 +253,6 @@ export const talks: Talk[] = [
         event: 'Build with AI: Masr Edition',
         date: 'May 2026',
         location: 'Egypt',
-        upcoming: true,
         eventUrl: 'https://www.linkedin.com/posts/gdgdamanhour_we-are-pleased-to-announce-that-as-part-activity-7454913487564103681-vrQv?utm_source=share&utm_medium=member_desktop&rcm=ACoAACyn6mwBjRC3IaJeItlnRqhYpqi5EhPCmbU',
       },
       {
@@ -337,13 +336,6 @@ export const talks: Talk[] = [
       'Architecture patterns, tooling, and production considerations on Google Cloud',
     ],
     sessions: [
-      {
-        event: 'AI COMMUNITY DAYS - Tunis 2026',
-        date: 'May 2026',
-        location: 'Tunis, Tunisia',
-        upcoming: true,
-        eventUrl: 'https://aicommunitydays.ai/events/tunis-2026?tab=speakers',
-      },
       {
         event: 'DevFest Ahlen 2025',
         date: 'December 2025',
