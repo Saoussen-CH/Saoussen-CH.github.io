@@ -9,7 +9,7 @@ const tiers = [
     num: '01',
     title: 'Simple Educational Article',
     sub: 'Concept explanation, no code, no project',
-    price: '$250 - $400',
+    price: '$200 - $400',
     hours: '4-6 hrs',
     includes: [
       '~1,500-2,000 words',
