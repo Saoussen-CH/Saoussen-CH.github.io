@@ -1,9 +1,11 @@
+import { Routes, Route } from 'react-router-dom';
 import {
   Navbar, Hero, About, Experience,
   Education, Projects, Certifications, Talks, Writing, Contact, Footer, BackToTop,
 } from './components';
+import { WritingServices } from './pages/WritingServices';
 
-export default function App() {
+function Portfolio() {
   return (
     <div className="relative">
       <Navbar />
@@ -21,5 +23,14 @@ export default function App() {
       <Footer />
       <BackToTop />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Portfolio />} />
+      <Route path="/writing-services" element={<WritingServices />} />
+    </Routes>
   );
 }

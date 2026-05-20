@@ -103,6 +103,21 @@
     }
     </script>
 
+    <!-- SPA redirect restore for GitHub Pages -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded[1] || '') + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="/profile-photo-opt.png" />
 

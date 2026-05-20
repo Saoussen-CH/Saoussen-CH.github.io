@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const NAV = [
@@ -15,6 +16,9 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>('');
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const href = (hash: string) => isHome ? hash : `/${hash}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -47,7 +51,7 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-[1320px] mx-auto px-6 md:px-10 h-[68px] flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href={href('#')} className="flex items-center gap-2 group">
           <span className="inline-flex">
             <span className="w-1 h-6 rounded-sm bg-coral mr-0.5" />
             <span className="w-1 h-4 rounded-sm bg-coral-2 mr-0.5 translate-y-1" />
@@ -59,7 +63,7 @@ export function Navbar() {
         </a>
 
         <nav className="hidden lg:flex items-center gap-7">
-          {NAV.map(n => (
+          {isHome ? NAV.map(n => (
             <a
               key={n.href}
               href={n.href}
@@ -69,7 +73,11 @@ export function Navbar() {
             >
               {n.label}
             </a>
-          ))}
+          )) : (
+            <a href="/" className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-1.5 text-[13px] font-semibold text-ink-2 hover:border-ink hover:text-ink transition-colors">
+              ← Back to site
+            </a>
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -95,7 +103,7 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden bg-paper border-t border-line">
           <div className="max-w-[1320px] mx-auto px-6 py-4 grid gap-2">
-            {NAV.map(n => (
+            {isHome ? NAV.map(n => (
               <a
                 key={n.href}
                 href={n.href}
@@ -104,7 +112,11 @@ export function Navbar() {
               >
                 {n.label}
               </a>
-            ))}
+            )) : (
+              <a href="/" onClick={() => setOpen(false)} className="py-2 text-[15px] font-medium text-ink-2">
+                ← Back to site
+              </a>
+            )}
             <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full justify-center">
               Get in touch <ArrowRight size={16} />
             </a>
