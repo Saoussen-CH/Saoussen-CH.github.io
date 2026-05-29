@@ -35,7 +35,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '31', label: 'Articles' },
-    { value: '13+', label: 'Talks & Workshops' },
+    { value: '14+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -329,6 +329,31 @@ export const talks: Talk[] = [
     ],
   },
   {
+    id: 'talk-building-deploying-mas-adk',
+    emoji: '🎤',
+    type: 'Talk',
+    title: 'Building and Deploying Multi-Agent Systems with Google ADK & Gemini Enterprise Agent Platform',
+    description: 'A technical talk covering the design, architecture, and production deployment of multi-agent systems using Google ADK and Gemini Enterprise Agent Platform Runtime. From AI agent fundamentals and ADK\'s modular framework to deploying full-stack agentic applications with FastAPI and React on Cloud Run, with agents hosted on the fully managed Agent Runtime.',
+    highlights: [
+      'Google ADK architecture: model-agnostic, deployment-agnostic, and framework-compatible',
+      'LLM-based agents for dynamic reasoning vs workflow agents for deterministic control',
+      'Multi-agent hierarchical trees with sequential, loop, and parallel workflow patterns',
+      'State, Artifacts, and Memory management in production agent systems',
+      'Deploying agents to Gemini Enterprise Agent Platform Runtime for managed scaling, security, and observability',
+      'Full-stack integration: FastAPI backend + React frontend + Agent Engine',
+      'IAM and authentication patterns for Cloud Run service accounts',
+      'Production observability with Cloud Trace, Logging, and Monitoring',
+    ],
+    sessions: [
+      {
+        event: 'WeAreDevelopers World Congress 2026',
+        date: 'July 2026',
+        location: 'Berlin, Germany',
+        upcoming: true,
+      },
+    ],
+  },
+  {
     id: 'talk-distributed-multi-agent',
     emoji: '🎤',
     type: 'Talk',
@@ -345,6 +370,12 @@ export const talks: Talk[] = [
       'Intuition to avoid the most common pitfalls in distributed agent system design: context passing, output contracts, retry handling, and context compaction',
     ],
     sessions: [
+      {
+        event: 'WeAreDevelopers World Congress 2026',
+        date: 'July 2026',
+        location: 'Berlin, Germany',
+        upcoming: true,
+      },
       {
         event: 'Google I/O Hurghada',
         date: 'June 2026',
