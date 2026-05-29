@@ -35,7 +35,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '31', label: 'Articles' },
-    { value: '11+', label: 'Talks & Workshops' },
+    { value: '13+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -244,6 +244,12 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
+        event: 'Cloud and AI Kingdom Tour',
+        date: 'June 2026',
+        location: 'Buraidah, Saudi Arabia',
+        upcoming: true,
+      },
+      {
         event: 'AI DevCamp · Build with AI',
         date: 'May 2026',
         location: 'London, UK',
@@ -326,16 +332,25 @@ export const talks: Talk[] = [
     id: 'talk-distributed-multi-agent',
     emoji: '🎤',
     type: 'Talk',
-    title: 'Designing & Deploying Distributed Multi-Agent Systems with Google\'s AI Stack',
-    description: 'A technical talk and live demonstration on designing and deploying distributed multi-agent systems using Google\'s AI stack. Demonstrated a live system where one orchestrator on Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) coordinates 5 specialist agents on Cloud Run to generate complete social media campaigns from a single prompt — showing how agents collaborate, delegate tasks, and scale beyond monolithic LLM applications.',
+    title: 'Designing & Deploying Distributed Multimodal Multi-Agent Systems with Google\'s AI Stack: ADK, Skills, MCP, A2A, Cloud Run, Gemini Enterprise Agent Platform Runtime',
+    description: 'A technical talk and live demonstration on designing and deploying distributed multi-agent systems using Google\'s AI stack. Demonstrated a live system where one orchestrator on Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) coordinates 5 specialist agents on Cloud Run to generate complete social media campaigns from a single prompt, showing how agents collaborate, delegate tasks, and scale beyond monolithic LLM applications.',
     highlights: [
-      'Practical introduction to Google ADK with Gemini 2.5 Flash',
+      'Practical introduction to Google ADK',
+      'Package reusable agent knowledge with ADK Skills (SkillToolset) to keep prompts lean',
+      'Bridge a text agent to an image generation model via a custom async tool',
       'Agent-to-Agent (A2A) Protocol for distributed agent communication',
       'Model Context Protocol (MCP) for integrating external tools like Notion',
       'Deployment strategies for Gemini Enterprise Agent Platform Runtime (formerly Vertex AI Agent Engine) and Cloud Run',
       'Architecture patterns, tooling, and production considerations on Google Cloud',
+      'Intuition to avoid the most common pitfalls in distributed agent system design: context passing, output contracts, retry handling, and context compaction',
     ],
     sessions: [
+      {
+        event: 'Google I/O Hurghada',
+        date: 'June 2026',
+        location: 'Hurghada, Egypt',
+        upcoming: true,
+      },
       {
         event: 'DevFest Ahlen 2025',
         date: 'December 2025',
