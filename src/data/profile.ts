@@ -395,7 +395,7 @@ export const talks: Talk[] = [
         upcoming: true,
       },
       {
-        event: 'Google I/O Hurghada',
+        event: 'Google I/O Extended Hurghada',
         date: 'June 2026',
         location: 'Hurghada, Egypt',
         upcoming: true,
@@ -428,7 +428,7 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
-        event: 'Google I/O Cairo',
+        event: 'Google I/O Extended Cairo',
         date: 'June 2026',
         location: 'Cairo, Egypt',
         upcoming: true,
