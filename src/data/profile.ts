@@ -398,7 +398,6 @@ export const talks: Talk[] = [
         event: 'Google I/O Extended Hurghada',
         date: 'June 2026',
         location: 'Hurghada, Egypt',
-        upcoming: true,
       },
       {
         event: 'DevFest Ahlen 2025',
