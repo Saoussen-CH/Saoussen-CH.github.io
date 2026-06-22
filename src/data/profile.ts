@@ -35,7 +35,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '31', label: 'Articles' },
-    { value: '15+', label: 'Talks & Workshops' },
+    { value: '16+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -244,12 +244,6 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
-        event: 'Cloud and AI Kingdom Tour',
-        date: 'June 2026',
-        location: 'Buraidah, Saudi Arabia',
-        upcoming: true,
-      },
-      {
         event: 'AI DevCamp · Build with AI',
         date: 'May 2026',
         location: 'London, UK',
@@ -364,10 +358,9 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
-        event: 'WeAreDevelopers World Congress 2026',
+        event: 'WeAreDevelopers World Congress - Online - 2026',
         date: 'July 2026',
         location: 'Berlin, Germany',
-        upcoming: true,
       },
     ],
   },
@@ -389,10 +382,9 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
-        event: 'WeAreDevelopers World Congress 2026',
+        event: 'WeAreDevelopers World Congress - Online - 2026',
         date: 'July 2026',
         location: 'Berlin, Germany',
-        upcoming: true,
       },
       {
         event: 'Google I/O Extended Hurghada',
@@ -427,9 +419,19 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
+        event: 'Cloud and AI Kingdom Tour',
+        date: 'June 2026',
+        location: 'Buraidah, Saudi Arabia',
+      },
+      {
         event: 'Google I/O Extended Cairo',
         date: 'June 2026',
         location: 'Cairo, Egypt',
+      },
+      {
+        event: 'Google I/O Extended Damanhour',
+        date: 'August 2026',
+        location: 'Damanhour, Egypt',
         upcoming: true,
       },
     ],
