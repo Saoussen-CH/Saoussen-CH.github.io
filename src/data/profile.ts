@@ -424,6 +424,7 @@ export const talks: Talk[] = [
         event: 'Cloud and AI Kingdom Tour',
         date: 'June 2026',
         location: 'Buraidah, Saudi Arabia',
+        eventUrl: 'https://cloudonair.withgoogle.com/events/ai-cloud-kingdom-tour',
       },
       {
         event: 'Google I/O Extended Cairo',
