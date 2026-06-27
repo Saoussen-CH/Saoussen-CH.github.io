@@ -21,13 +21,12 @@ export function Experience() {
           </div>
           <div className="lg:col-span-6 flex items-end">
             <p className="text-[16px] leading-relaxed text-ink-2 max-w-[520px]">
-              From data-science POCs to cloud-native multi-agent platforms. Always framed around an outcome,
-              always followed through to production.
+              End-to-end AI engineering, from ML pipelines and cloud architecture to agentic systems and multi-agent platforms. Always production-first, always outcome-driven.
             </p>
           </div>
         </motion.div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <div className="relative pl-8 border-l-2 border-line space-y-12">
             {experiences.map((exp, i) => (
               <motion.article

@@ -391,6 +391,7 @@ export const talks: Talk[] = [
         event: 'Google I/O Extended Hurghada',
         date: 'June 2026',
         location: 'Hurghada, Egypt',
+        eventUrl: 'https://gdg.community.dev/events/details/google-gdg-hurghada-presents-io-extend-hurghada-2026/',
       },
       {
         event: 'DevFest Ahlen 2025',
@@ -428,6 +429,7 @@ export const talks: Talk[] = [
         event: 'Google I/O Extended Cairo',
         date: 'June 2026',
         location: 'Cairo, Egypt',
+        eventUrl: 'https://gdg.community.dev/events/details/google-gdg-cairo-presents-google-io-extended-cairo-2026/',
       },
       {
         event: 'Google I/O Extended Damanhour',
