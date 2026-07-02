@@ -34,7 +34,7 @@ export const profile = {
     { value: 'GDE', label: 'Google Developer Expert', sublabel: '1 of 213 in Cloud AI Worldwide', featured: true },
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
-    { value: '31', label: 'Articles' },
+    { value: '32', label: 'Articles' },
     { value: '16+', label: 'Talks & Workshops' },
   ],
 };
@@ -315,6 +315,7 @@ export const talks: Talk[] = [
         event: 'WeAreDevelopers World Congress - Online - 2026',
         date: 'July 2026',
         location: 'Berlin, Germany',
+        eventUrl: 'https://www.wearedevelopers.com/en/videos/1976/designing-and-deploying-distributed-multimodal-multi-agent-systems-with-google-s-ai-stac',
       },
       {
         event: 'Google I/O Extended Hurghada',
@@ -418,6 +419,7 @@ export const talks: Talk[] = [
         event: 'WeAreDevelopers World Congress - Online - 2026',
         date: 'July 2026',
         location: 'Berlin, Germany',
+        eventUrl: 'https://www.wearedevelopers.com/en/videos/1918/building-and-deploying-multi-agent-systems-with-adk-and-vertex-ai',
       },
     ],
   },
@@ -458,6 +460,11 @@ export const talks: Talk[] = [
     sessions: [],
   },
 ];
+
+// ============================================
+// 📝 ARTICLES
+// ============================================
+
 
 // ============================================
 // 🔗 SOCIAL LINKS

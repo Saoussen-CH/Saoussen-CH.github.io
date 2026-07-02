@@ -147,7 +147,6 @@ function ArticlesTab({ inView }: { inView: boolean }) {
       description: "A comprehensive series on building production-ready distributed multi-agent architectures using Google Cloud's AI infrastructure, A2A protocol, and modern orchestration patterns.",
       tags: ['Multi-Agent', 'Google Cloud', 'A2A Protocol', 'Distributed Systems', 'Orchestration'],
       accent: 'coral',
-      reverse: true,
     },
     {
       key: 'adk',
@@ -158,7 +157,6 @@ function ArticlesTab({ inView }: { inView: boolean }) {
       description: 'A comprehensive guide covering everything from fundamentals to production deployment of AI agents using Google Agent Development Kit.',
       tags: ['Google ADK', 'Vertex AI', 'Agentic AI', 'Production', 'Multi-Agent'],
       accent: 'violet',
-      reverse: true,
       cap: 9,
     },
     {
@@ -303,30 +301,51 @@ function ArticlesTab({ inView }: { inView: boolean }) {
               <div className="px-5 md:px-6 pb-6 border-t border-line-soft pt-4">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {displayedOthers.map((article, index) => (
-                    <motion.a
+                    <motion.div
                       key={article.id}
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.05 }}
-                      className="group bg-paper border border-line-soft rounded-xl p-4 hover:border-coral hover:-translate-y-0.5 transition-all"
+                      className="group bg-paper border border-line-soft rounded-xl p-4 hover:border-coral hover:-translate-y-0.5 transition-all flex flex-col"
                     >
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="font-mono text-[10px] font-semibold uppercase tracking-wider2 text-coral">
-                          {article.category}
-                        </span>
-                        <span className="font-mono text-[10px] text-ink-4">·</span>
-                        <span className="font-mono text-[10px] text-ink-4">{article.date}</span>
+                      <a
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block flex-1"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="font-mono text-[10px] font-semibold uppercase tracking-wider2 text-coral">
+                            {article.category}
+                          </span>
+                          <span className="font-mono text-[10px] text-ink-4">·</span>
+                          <span className="font-mono text-[10px] text-ink-4">{article.date}</span>
+                        </div>
+                        <h4 className="text-[14px] font-semibold text-ink leading-snug group-hover:text-coral transition-colors line-clamp-2 mb-2">
+                          {article.title}
+                        </h4>
+                      </a>
+                      <div className="flex items-center gap-3 mt-1">
+                        <a
+                          href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[12px] font-semibold text-ink-2 hover:text-coral transition-colors"
+                        >
+                          Read <ArrowRight size={12} strokeWidth={2} />
+                        </a>
+                        {article.codelabUrl && (
+                          <a
+                            href={article.codelabUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-[12px] font-semibold text-violet hover:text-coral transition-colors"
+                          >
+                            Codelab <ExternalLink size={11} strokeWidth={2} />
+                          </a>
+                        )}
                       </div>
-                      <h4 className="text-[14px] font-semibold text-ink leading-snug group-hover:text-coral transition-colors line-clamp-2 mb-2">
-                        {article.title}
-                      </h4>
-                      <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-ink-2 group-hover:text-coral">
-                        Read <ArrowRight size={12} strokeWidth={2} className="transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </motion.a>
+                    </motion.div>
                   ))}
                 </div>
 

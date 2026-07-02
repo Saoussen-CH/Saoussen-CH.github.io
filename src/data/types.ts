@@ -12,6 +12,7 @@ export interface Article {
   excerpt: string;
   tags: string[];
   url: string;
+  codelabUrl?: string;
 }
 
 export interface Publication {
