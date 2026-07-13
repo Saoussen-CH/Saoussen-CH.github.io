@@ -89,7 +89,7 @@ export function About() {
             className="lg:col-span-7"
           >
             <h2 className="font-display font-black text-[22px] md:text-[26px] lg:text-[30px] leading-none text-ink">
-              Technology <span className="accent text-[0.75em] align-middle">×</span> Business <span className="accent text-[0.75em] align-middle">×</span> Impact
+              Business <span className="accent text-[0.75em] align-middle">×</span> Technology <span className="accent text-[0.75em] align-middle">×</span> Impact
             </h2>
             <div className="mt-8 space-y-6 text-[16px] md:text-[17px] leading-relaxed text-ink-2">
               {profile.aboutParagraphs.map((p, i) => (

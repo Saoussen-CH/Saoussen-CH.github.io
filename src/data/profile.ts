@@ -120,7 +120,7 @@ export const experiences: Experience[] = [
     id: 'sofrecom',
     startDate: '2019',
     endDate: '2022',
-    title: 'Machine Learning Engineer',
+    title: 'Lead Data & Machine Learning Engineer',
     company: 'Sofrecom (Orange Innovation)',
     location: 'Tunisia',
     highlights: [
