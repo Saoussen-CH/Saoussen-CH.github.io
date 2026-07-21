@@ -18,13 +18,11 @@ export const profile = {
   // About section - Updated to match LinkedIn
   aboutParagraphs: [
     `I design and deliver production-grade AI solutions that align technology, business goals, and user impact.`,
-    `That tech-business-impact mindset shapes everything I build. With a background as a Machine Learning & Cloud AI
+    `That business-tech-impact mindset shapes everything I build. With a background as a Machine Learning & Cloud AI
      Engineer, I've led end-to-end ML/AI initiatives: from problem framing and architecture design to development,
      deployment, monitoring, and iteration.`,
-    `My work spans AI solution architecture, MLOps, and applied Generative AI, with hands-on experience in
-     Vertex AI, cloud-native pipelines, and LLM-based systems. I've collaborated with product owners, engineering
-     teams, and leadership to translate business needs into scalable AI products.`,
-    `Today, my focus is on Agentic AI, AI Solution Architecture, and AI Product Management, helping teams make
+    `My work spans AI solution architecture, Agentic AI, MLOps, AgentOps, and applied Generative AI, with hands-on experience building multi-agent systems, LLM applications, and cloud-native pipelines on Gemini Enterprise Agent Platform (formerly Vertex AI). Beyond engineering, I advise organizations on AI strategy, feasibility, and responsible adoption, and deliver corporate AI training programs for engineering and business teams.`,
+    `Today, my focus is on Agentic AI, AI Solution Architecture, AI Product Management, and Project Management, helping teams make
      the right technical and product decisions, balance feasibility and impact, and bring AI products responsibly
      to market.`,
   ],
@@ -84,6 +82,14 @@ export const certifications: Certification[] = [
     date: '2024',
     url: 'https://www.credly.com/badges/3f310cc0-418c-4a46-a75d-be51f9ec5c42/public_url'
     
+  },
+  {
+    id: 'microsoft-ai-pm',
+    emoji: '🤖',
+    title: 'AI Product Manager Professional',
+    provider: 'Microsoft',
+    date: 'July 2026',
+    url: 'https://www.coursera.org/account/accomplishments/professional-cert/JY8VEENB3R4Y',
   },
   {
     id: 'complete-list-100+-certifications',

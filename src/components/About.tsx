@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, MapPin, Clock, Globe, Award, Cloud, Mic, PenLine } from 'lucide-react';
+import { ArrowRight, MapPin, Clock, Globe, Award, Cloud, Mic, PenLine, Briefcase } from 'lucide-react';
 import { profile } from '../data';
 
 const PILLARS = [
@@ -21,8 +21,13 @@ const PILLARS = [
   },
   {
     icon: PenLine,
-    title: 'Technical Thought Leader',
-    desc: '30+ articles on Medium & Google Cloud publication.',
+    title: 'AI Technical Author',
+    desc: 'Deep technical series and official Google Codelabs, published on Medium and the Google Cloud publication.',
+  },
+  {
+    icon: Briefcase,
+    title: 'AI Product & Project Management',
+    desc: 'From roadmap to release: Microsoft AI PM Professional covers product strategy, AI lifecycle, and ethics. Google PM Professional covers planning, Agile, and delivery.',
   },
 ];
 

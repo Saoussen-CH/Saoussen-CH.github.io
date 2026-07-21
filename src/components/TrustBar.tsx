@@ -24,7 +24,7 @@ export function TrustBar() {
           transition={{ duration: 0.6, delay: 0.08 }}
           className="mt-4 font-display font-black text-display-2 text-ink"
         >
-          A decade of <span className="accent">shipping, writing, speaking.</span>
+          7+ years of <span className="accent">shipping, writing, speaking.</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -32,8 +32,7 @@ export function TrustBar() {
           transition={{ duration: 0.6, delay: 0.18 }}
           className="mt-5 mx-auto max-w-[620px] text-[16px] leading-relaxed text-ink-2"
         >
-          Recognised by Google as a Developer Expert in Cloud AI. Certified across the stack, writing
-          essays on production AI, speaking across Europe and MENA.
+          Recognised by Google as a Developer Expert in Cloud AI. Certified across the stack, publishing deep technical series on production AI, speaking across Europe and MENA.
         </motion.p>
 
         <motion.div

@@ -25,8 +25,7 @@ export function Certifications() {
           </div>
           <div className="lg:col-span-6 flex items-end">
             <p className="text-[16px] leading-relaxed text-ink-2 max-w-[520px]">
-              Five Google Cloud and industry certifications, renewed on schedule. 100+ courses across
-              AI, data, and engineering. The full portfolio is linked below.
+              Certified across the full stack - ML engineering, cloud architecture, data engineering, project management, and AI product management. The rare combination that builds the system, manages the delivery, and owns the product.
             </p>
           </div>
         </motion.div>
