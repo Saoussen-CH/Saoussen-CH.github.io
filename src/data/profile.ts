@@ -17,7 +17,7 @@ export const profile = {
   
   // About section - Updated to match LinkedIn
   aboutParagraphs: [
-    `I design and deliver production-grade AI solutions that align technology, business goals, and user impact.`,
+    `I design and deliver production-grade AI solutions that align business goals, technology, and user impact.`,
     `That business-tech-impact mindset shapes everything I build. With a background as a Machine Learning & Cloud AI
      Engineer, I've led end-to-end ML/AI initiatives: from problem framing and architecture design to development,
      deployment, monitoring, and iteration.`,
@@ -88,8 +88,8 @@ export const certifications: Certification[] = [
     emoji: '🤖',
     title: 'AI Product Manager Professional',
     provider: 'Microsoft',
-    date: 'July 2026',
-    url: 'https://www.coursera.org/account/accomplishments/professional-cert/JY8VEENB3R4Y',
+    date: '2026',
+    url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/JY8VEENB3R4Y',
   },
   {
     id: 'complete-list-100+-certifications',
