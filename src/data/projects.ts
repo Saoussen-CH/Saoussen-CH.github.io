@@ -43,11 +43,11 @@ export const projects: Project[] = [
   {
     id: 'tech-digest-managed-agent',
     emoji: '📋',
-    title: 'Tech Digest Managed Agent (Codelab)',
-    description: 'Starter code for the official Google Codelab "Build a Managed Tech Digest Agent with the Gemini API", published on Google Codelabs in collaboration with Mete Atamel (Developer Advocate at Google). Covers the full lifecycle of managed agents: first agent call with streaming, AGENTS.md-based customization, skills, environment persistence, multi-turn refinement, and saving a named agent.',
-    tags: ['Gemini Managed Agents API', 'Python', 'AGENTS.md', 'Google Codelabs'],
+    title: 'Build a Daily Tech Digest Agent with Managed Agents on the Gemini API (Codelab)',
+    description: 'Starter code for the official Google Codelab published on Google Codelabs in collaboration with Mete Atamel (Developer Advocate at Google). Covers the full lifecycle of managed agents: first agent call with streaming, AGENTS.md-based customization, skills, safety hooks, environment persistence, multi-turn refinement, saving a named agent, Gmail delivery, and daily scheduling with triggers.',
+    tags: ['Gemini Managed Agents API', 'Python', 'AGENTS.md', 'Hooks', 'Gmail API', 'Google Codelabs'],
     githubUrl: 'https://github.com/Saoussen-CH/tech-digest-managed-agent',
-    codelabUrl: 'https://codelabs.developers.google.com/tech-digest-managed-agent#0',
+    codelabUrl: 'https://codelabs.developers.google.com/tech-digest-managed-agent',
   },
   {
     id: 'tech-digest-managed-agent-app',
