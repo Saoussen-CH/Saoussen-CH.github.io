@@ -33,7 +33,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '32', label: 'Articles' },
-    { value: '16+', label: 'Talks & Workshops' },
+    { value: '20+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -318,6 +318,12 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
+        event: 'DevFest 2026 by GDG Sharjah',
+        date: 'October 2026',
+        location: 'Dubai, UAE',
+        upcoming: true,
+      },
+      {
         event: 'WeAreDevelopers World Congress - Online - 2026',
         date: 'July 2026',
         location: 'Berlin, Germany',
@@ -359,6 +365,12 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
+        event: 'AI and Cloud Kingdom Tour 2',
+        date: 'October 2026',
+        location: 'Jeddah, Saudi Arabia',
+        upcoming: true,
+      },
+      {
         event: 'TechFest 1.0 · Build with AI',
         date: 'May 2026',
         location: 'Monastir, Tunisia',
@@ -367,11 +379,35 @@ export const talks: Talk[] = [
     ],
   },
   {
+    id: 'talk-agent-evals-flywheel',
+    emoji: '🎤',
+    type: 'Talk',
+    title: 'Building Confidence in AI Agents: From Vibe Checks to Continuous Evals',
+    description: 'AI agents can fail in ways traditional tests were never designed to catch: an agent might still produce an answer while calling the wrong tool, hallucinating parameters, or violating constraints. This talk explores the Agent Evaluation Quality Flywheel and how it turns agent evaluation from subjective vibe checks into a continuous engineering discipline. It goes beyond final-response testing to evaluate complete agent trajectories for task success, tool-use quality, and multi-turn behavior, and shows how Google ADK and Gemini Enterprise Agent Platform support the full lifecycle, from pre-production simulation to production monitoring.',
+    highlights: [
+      'Why final-response testing is not enough: evaluating full trajectories for task success, tool-use quality, and multi-turn behavior',
+      'Pre-production: generating synthetic scenarios and simulating multi-turn users',
+      'Capturing agent behavior through traces and OpenTelemetry',
+      'Combining adaptive AutoRaters with deterministic and custom metrics',
+      'Automatic Loss Analysis: turning individual failures into actionable failure patterns',
+      'Driving systematic optimization from evaluation results instead of manual prompt tweaking',
+      'Extending the same evaluation strategy into production with Online Monitors, quality-drift detection, and alerts',
+      'A practical architecture for a continuous, metric-driven loop to evaluate, diagnose, improve, and monitor AI agents',
+    ],
+    sessions: [
+      {
+        event: 'DevFest Dubai',
+        date: 'September 2026',
+        location: 'Dubai, UAE',
+      },
+    ],
+  },
+  {
     id: 'talk-managed-agents-api',
     emoji: '🎤',
     type: 'Talk',
     title: 'Managed Agents: Build Agents with One API Call, a Full Sandbox, and Three Surfaces',
-    description: 'Before Managed Agents, building a production-grade AI agent meant weeks of infrastructure work: provisioning sandboxes, implementing reasoning loops, and managing state and multi-turn memory. This talk introduces the Gemini Managed Agents API and the shift it represents: a single API call provisions a fully autonomous agent powered by the Antigravity harness - the same harness behind Google\'s Deep Research - and Gemini 3.5 Flash inside a managed Linux sandbox with full filesystem access, code execution, and web browsing. The talk covers the model + harness foundation, customisation with AGENTS.md and SKILL.md, named agent persistence, and multi-turn refinement across all three surfaces (AI Studio, Gemini API, and Agent Platform), brought to life with three live demos: AI Studio templates, a full-stack Daily Digest app, and the Managed Issue Resolver where two agents autonomously fix a GitHub issue and canary-deploy the fix to Cloud Run with automatic rollback.',
+    description: 'Before Managed Agents, building a production-grade AI agent meant weeks of infrastructure work: provisioning sandboxes, implementing reasoning loops, and managing state and multi-turn memory. This talk introduces the Gemini Managed Agents API and the shift it represents: a single API call provisions a fully autonomous agent powered by the Antigravity harness - the same harness behind Google\'s Deep Research - and Gemini 3.7 Flash inside a managed Linux sandbox with full filesystem access, code execution, and web browsing. The talk covers the model + harness foundation, customisation with AGENTS.md and SKILL.md, named agent persistence, and multi-turn refinement across all three surfaces (AI Studio, Gemini API, and Agent Platform), brought to life with three live demos: AI Studio templates, a full-stack Daily Digest app, and the Managed Issue Resolver where two agents autonomously fix a GitHub issue and canary-deploy the fix to Cloud Run with automatic rollback.',
     highlights: [
       'The Foundation: the Antigravity harness wraps Gemini 3.5 Flash with a ReAct loop, tool execution, and a managed Linux sandbox',
       'Before vs. After: from weeks of harness infrastructure to a single API call that provisions a full Ubuntu sandbox with 4 CPU / 16 GB RAM, Python, Node.js, filesystem, and web access',
@@ -401,6 +437,12 @@ export const talks: Talk[] = [
         date: 'August 2026',
         location: 'Damanhour, Egypt',
         eventUrl: 'https://gdg.community.dev/events/details/google-gdg-damanhour-presents-io-extended-dive-into-the-future-of-googles-innovations-2026/',
+      },
+      {
+        event: 'DevFest Beja & Bizerte B&B 2026',
+        date: 'October 2026',
+        location: 'Beja, Tunisia',
+        upcoming: true,
       },
     ],
   },
