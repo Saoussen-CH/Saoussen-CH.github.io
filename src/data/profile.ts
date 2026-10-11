@@ -33,7 +33,7 @@ export const profile = {
     { value: '3x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '32', label: 'Articles' },
-    { value: '20+', label: 'Talks & Workshops' },
+    { value: '21+', label: 'Talks & Workshops' },
   ],
 };
 
@@ -379,6 +379,29 @@ export const talks: Talk[] = [
     ],
   },
   {
+    id: 'talk-agentops-google-cloud',
+    emoji: '🎤',
+    type: 'Talk',
+    title: 'AgentOps: Operationalize AI Agents on Google Cloud',
+    description: 'Building an agent that works is the easy part. Keeping it working under real traffic, with adversarial users and no human watching at 2 AM, is an engineering discipline: AgentOps. This session is the end-to-end playbook, built entirely on Google Cloud. Six pillars, each one taught by breaking it first with a real production incident, then the fix. You leave with a complete lifecycle for operating agents in production and the specific Google Cloud services behind each stage.',
+    highlights: [
+      'Build with Google ADK: structuring a multi-agent system',
+      'Test with golden datasets and evaluation-as-unit-tests: trajectory and tool-use scoring, LLM-as-judge autoraters, and a Cloud Build quality gate that blocks a bad deploy automatically',
+      'Deploy with canary traffic splitting, monitoring across business metrics, application telemetry and human feedback, and instant rollback via environment routing',
+      'Monitor with OpenTelemetry spans in Cloud Trace and structured logging in Cloud Logging, catching reasoning loops, hallucinations, and instruction-version regressions',
+      'Govern with Agent Registry, Agent Gateway, and SPIFFE-backed Agent Identity: discovery, ownership, and a provable audit trail',
+      'Secure with least-privilege IAM, Secret Manager, encrypted session state, VPC Service Controls, and Model Armor',
+    ],
+    sessions: [
+      {
+        event: 'DevFest Sousse 2026',
+        date: 'November 2026',
+        location: 'Sousse, Tunisia',
+        upcoming: true,
+      },
+    ],
+  },
+  {
     id: 'talk-agent-evals-flywheel',
     emoji: '🎤',
     type: 'Talk',
@@ -442,7 +465,6 @@ export const talks: Talk[] = [
         event: 'DevFest Beja & Bizerte B&B 2026',
         date: 'October 2026',
         location: 'Beja, Tunisia',
-        upcoming: true,
       },
     ],
   },
