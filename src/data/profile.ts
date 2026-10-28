@@ -321,7 +321,6 @@ export const talks: Talk[] = [
         event: 'DevFest 2026 by GDG Sharjah',
         date: 'October 2026',
         location: 'Dubai, UAE',
-        upcoming: true,
       },
       {
         event: 'WeAreDevelopers World Congress - Online - 2026',
@@ -444,6 +443,17 @@ export const talks: Talk[] = [
     ],
     sessions: [
       {
+        event: 'DevFest Beja & Bizerte B&B 2026',
+        date: 'October 2026',
+        location: 'Beja, Tunisia',
+      },
+      {
+        event: 'Google I/O Extended Damanhour',
+        date: 'August 2026',
+        location: 'Damanhour, Egypt',
+        eventUrl: 'https://gdg.community.dev/events/details/google-gdg-damanhour-presents-io-extended-dive-into-the-future-of-googles-innovations-2026/',
+      },
+      {
         event: 'Cloud and AI Kingdom Tour',
         date: 'June 2026',
         location: 'Buraidah, Saudi Arabia',
@@ -454,17 +464,6 @@ export const talks: Talk[] = [
         date: 'June 2026',
         location: 'Cairo, Egypt',
         eventUrl: 'https://gdg.community.dev/events/details/google-gdg-cairo-presents-google-io-extended-cairo-2026/',
-      },
-      {
-        event: 'Google I/O Extended Damanhour',
-        date: 'August 2026',
-        location: 'Damanhour, Egypt',
-        eventUrl: 'https://gdg.community.dev/events/details/google-gdg-damanhour-presents-io-extended-dive-into-the-future-of-googles-innovations-2026/',
-      },
-      {
-        event: 'DevFest Beja & Bizerte B&B 2026',
-        date: 'October 2026',
-        location: 'Beja, Tunisia',
       },
     ],
   },
