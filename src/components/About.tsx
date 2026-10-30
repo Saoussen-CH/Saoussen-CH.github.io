@@ -11,8 +11,8 @@ const PILLARS = [
   },
   {
     icon: Cloud,
-    title: '3× Google Cloud Certified',
-    desc: 'Professional ML Engineer · Cloud Architect · Data Engineer, all active 2025-2026.',
+    title: '4× Google Cloud Certified',
+    desc: 'Professional Agentic Architect · ML Engineer · Cloud Architect · Data Engineer, all active 2025-2026.',
   },
   {
     icon: Mic,

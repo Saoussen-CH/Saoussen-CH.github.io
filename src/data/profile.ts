@@ -30,7 +30,7 @@ export const profile = {
   // Stats
   stats: [
     { value: 'GDE', label: 'Google Developer Expert', sublabel: '1 of 213 in Cloud AI Worldwide', featured: true },
-    { value: '3x', label: 'GCP Certified' },
+    { value: '4x', label: 'GCP Certified' },
     { value: '100+', label: 'Certificates' },
     { value: '32', label: 'Articles' },
     { value: '21+', label: 'Talks & Workshops' },
@@ -42,6 +42,14 @@ export const profile = {
 // ============================================
 
 export const certifications: Certification[] = [
+  {
+    id: 'gcp-agentic-architect',
+    emoji: '🤖',
+    title: 'Professional Agentic Architect',
+    provider: 'Google Cloud',
+    date: 'October 2026',
+    url: 'https://www.credly.com/badges/46adfd84-bbfb-42eb-bf21-f63dd5b75742/public_url',
+  },
   {
     id: 'gcp-ml',
     emoji: '🎓',
