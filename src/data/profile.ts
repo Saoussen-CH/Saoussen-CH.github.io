@@ -404,7 +404,6 @@ export const talks: Talk[] = [
         event: 'DevFest Sousse 2026',
         date: 'November 2026',
         location: 'Sousse, Tunisia',
-        upcoming: true,
       },
     ],
   },
